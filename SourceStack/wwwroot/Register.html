@@ -4,71 +4,103 @@
     <meta charset="utf-8" />
     <title></title>
     <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <style>
+        #main {
+            height: 600px;
+            width: 1200px;
+        }
+
+        .head {
+            height: 80px;
+            padding-left: 100px;
+        }
+            .head input {
+                float:right;
+            }
+
+        .article {
+            width: 450px;
+            height: 350px;
+            float: left;
+            padding-left: 100px;
+        }
+
+        .aside {
+            width: 600px;
+            height: 350px;
+            padding-left: 100px;
+            float: left;
+        }
+
+        .table {
+            margin-top: 20px;
+        }
+
+        .aside li {
+            margin-top: 15px;
+        }
+
+        .foot {
+            width: 1200px;
+            height: 150px;
+            clear: both;
+            padding-left: 100px;
+            padding-top: 20px;
+        }
+
+        .put {
+            height: 80px;
+            line-height: 80px;
+            float: right;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
-        </div>
-    </nav>
-    <header>
-        <h3>用户登录</h3>
-    </header>
-    <article>
-        <div>
-            <label>用户名：(*必填)</label><br />
-            <input id="userid" name="userid" placeholder="登陆用户名" type="text" />
-        </div>
-        <div>
-            <label>密码：(*必填)</label><br />
-            <input id="password" name="password" placeholder="不少于四位" type="password" />
-        </div>
-        <div>
-            <label>验证码：(*必填)</label><br />
-            <input id="test" name="test" type="text" />
-        </div>
-        <div>
-            <input type="button" value="提交" />
-        </div>
-    </article>
-    <aside>
-        <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-        </ul>
-    </aside>
+    <main id="main">
+        <header class="head">
+            <h1>用户登录</h1>
+            <input type="button" value="返回" />
+        </header>
+        <article class="article">
+            <div class="table">
+                <label>用户名：(*必填)</label><br />
+                <input id="userid" name="userid" placeholder="登陆用户名" type="text" style="width:350px" />
+            </div>
+            <div class="table">
+                <label>密码：(*必填)</label><br />
+                <input id="password" name="password" placeholder="不少于四位" type="password" style="width:350px" />
+            </div>
+            <div class="table">
+                <label>验证码：(*必填)</label><br />
+                <input id="test" name="test" type="text" style="width:80px;" />
+                <span>点击输入框显示</span>
+            </div>
+            <div class="table">
+                <input type="button" value="提交" />
+            </div>
+        </article>
+        <aside class="aside">
+            <p style="font-size:30px;">说明</p>
+            <ol>
+                <li>我们希望通过一起帮，能直接解决大家在电脑操作/软件使用/编程学习等方面的具体问题。</li>
+                <li>现在互联网远程技术（比如QQ桌面共享）已经非常成熟，当我们再遇到上述问题，如果别人能直接远程给予帮助，岂不是好？</li>
+                <li>当然，你也可以在你熟悉的领域去帮助别人。由此而形成我们这个“你帮他他帮我我帮你，大家一起帮”的网上互助社区平台。</li>
+                <li>公平起见，我们还引入了 帮帮点/币/豆 三级概念，以记录和衡量社区成员的收获和贡献。</li>
+                <li>赶快加入我们，赚取帮帮币吧！</li>
+            </ol>
+        </aside>
+        <footer class="foot">
+            <a href="#">关于我们</a>|
+            <a href="#">常见问题</a>|
+            <a href="#">意见建议</a>|
+            <a href="#">历史通知</a>|
+            <a href="#" style="color:darkseagreen">友情捐赠</a>|
+            <a href="#">诚邀合伙人</a><br />
+            友情链接：
+            <div class="put">
+                <a href="#">渝ICP备18007191号（备案）</a>©2020-首顾科技
+            </div>
+        </footer>
+    </main>
 </body>
 </html>
