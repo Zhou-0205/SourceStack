@@ -1,19 +1,45 @@
 ﻿Sql server
-1.mdf和.ldf的区别
-
-2.删除
-  勾选：Close exsiting connections，强制删除数据库。 
+1.主流数据库以及对应的语言
+  Oracle推出的被称为PL/SQL
+  mysql还是叫mysql
+  SQL Server推出的，就叫做：T-SQL
+2.mdf和.ldf的区别
+  .mdf（Master Database File）: 存储用户录入数据库的数据
+  .ldf（Log Database File）: 存储每一次用户对数据库进行操作的记录，这些记录被称之为“日志（log）”
+3.删除
+  DROP DATABASE [17BANG]
 
   alter database [17bang]
   set single_user with rollback immediate --将数据库回滚到原始配置状态
-3.备份
+4.备份
   -- 将数据库备份到C盘17bang.bak
   BACKUP DATABASE [17bang] TO DISK = 'C:\\17bang.bak' 
   -- 根据C盘17bang.bak恢复数据库
   RESTORE DATABASE [17bang] FROM DISK = 'C:\\17bang.bak' 
-4.批处理
+5.批处理
   GO
-5.主流数据库以及对应的语言
-HTML和css
-1.定位
-2.padding和margin
+6.修改表结构
+  ALTER TABLE Student ADD Score DECIMAL(3,1);
+  ALTER TABLE Student DROP COLUMN Score;
+  ALTER TABLE Student
+  ALTER COLUMN SCORE FLOAT NULL;
+7.数据类型
+  数据识别
+  运算
+  校验
+  高效
+8.文本类型
+  NCHAR NVARCHAR
+  VAR CHAR
+  TEXT NTEXT
+  加N为Unicode编码格式
+9.数值类型
+  整数
+  INT，其他还有tinyint，smallint和bigint 
+  小数
+  decimal和numeric：可以精确地指定小数的整体长度和位数
+  float和real：小数位数可变的（非精确的）存储方式
+10.
+  日期 datatime
+  判断 bit
+
