@@ -42,4 +42,9 @@
 10.
   日期 datatime
   判断 bit
+11.增删改查
+12.运算符
+13.exists
+14.null
+15.like
 
