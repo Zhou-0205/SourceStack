@@ -47,4 +47,9 @@
 13.exists
 14.null
 15.like
+16.IDENTITY
+17.ORDER BY
+18.ORDER BY
+19.函数
+20.
 
