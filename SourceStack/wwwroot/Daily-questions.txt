@@ -60,3 +60,10 @@
 ER模型
 三大范式
 join引入
+on where和on and
+自连接去重
+视图与基表
+视图join
+option
+索引视图
+
