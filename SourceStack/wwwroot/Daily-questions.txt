@@ -65,5 +65,7 @@ on where和on and
 视图与基表
 视图join
 option
-索引视图
-
+索引视图、
+表变量
+临时表
+异常
