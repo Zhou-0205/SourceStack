@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceStack", "SourceStack\SourceStack.csproj", "{9117B489-453E-4827-A2EA-8416F9D14452}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "First", "First\First.csproj", "{6FFA1F61-DB5D-45F4-8597-2F85BE044794}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "First", "First\First.csproj", "{6FFA1F61-DB5D-45F4-8597-2F85BE044794}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
