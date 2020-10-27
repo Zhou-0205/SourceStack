@@ -7,13 +7,21 @@ namespace CSharplearn
     //帮帮币版块，定义一个类HelpMoney，表示一行帮帮币交易数据，包含你认为应该包含的字段和方法
     class HelpMoney
     {
-        private DateTime time;
-        private int available;
-        private int forzen;
-        private string kind;
-        private int change;
-        private string note;
-        public void BangMoney()
-        { }
+        private DateTime time { get; set; }
+        private int useable { get; set; }
+        private int freeza { get; set; }
+        private string kind { get; set; }
+        private int change { get; set; }
+        private string notes { get; set; }
+
+        public void gain(int num)
+        {
+
+        }
+        public void freeze(int num)
+        {
+
+        }
+
     }
 }

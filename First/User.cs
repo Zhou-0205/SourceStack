@@ -8,17 +8,42 @@ namespace CSharplearn
     //注册/登录功能，定义一个User类，包含字段：Name（用户名）、Password（密码）和 邀请人（InvitedBy），和方法：Register()、Login() 
     class User
     {
-        private string Name;
-        private string Password;
-        private User InvitedBy;
+        private string _name;
+        private User()
+        {
 
-        //public static bool Register(User user)
-        //{
-        //    if (user.Name=="张三")
-        //    {
-        //        return "";
-        //    }
-        //}
+        }
+        public User(string name, string password)//每一个User对象一定有Name和Password赋值
+        {
+            _name = name;
+            _password = password;
+        }
+        public string Name
+        {
+            set       //如果user.Name为“admin”，输入时修改为“系统管理员”
+            {
+                if (value == "admin")
+                {
+                    _name = "系统管理员";
+                    return;
+                }
+            }
+            get
+            {
+                return _name;
+            }
+        }
+        private string _password;
+
+        public string Password
+        {
+            set { _password = value; } //user.Password在类的外部只能改不能读
+            get { return _password; }
+        }
+
+        private User _invitedBy { get; set; }
+        private string _inviteCode { get; set; }
+        private string authCode { get; set; }
     }
     
 }

@@ -298,7 +298,50 @@ namespace First
         //    }
         //}
 
+        //快排
+        static void quicksort(int[] array, int left, int right)
+        {
+            if (left > right)
+            {
+                return;
+            }
+            int oldleft = left, oldright = right;
 
+            int middle = left;
+            int middlevalue = array[left];
+            while (left < right)
+            {
+                while (right > middle)
+                {
+                    if (array[right] < middlevalue)
+                    {
+                        swap(array, middle, right);
+                        middle = right;
+                        break;
+                    }
+                    right--;
+                }
+                while (left < middle)
+                {
+                    if (array[left] > middlevalue)
+                    {
+                        swap(array, middle, left);
+                        middle = left;
+                        break;
+                    }
+                    right--;
+                }
+            }
+            quicksort(array, oldleft, middle - 1);
+
+            quicksort(array, middle + 1, oldright);
+        }
+        private static void swap(int[] array, int middle, int right)
+        {
+            int temp = array[middle];
+            array[middle] = array[right];
+            array[right] = temp;
+        }
     }
 }
 
