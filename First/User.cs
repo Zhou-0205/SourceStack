@@ -25,7 +25,10 @@ namespace CSharplearn
                 if (value == "admin")
                 {
                     _name = "系统管理员";
-                    return;
+                }
+                else
+                {
+                    _name = value;
                 }
             }
             get
@@ -38,12 +41,12 @@ namespace CSharplearn
         public string Password
         {
             set { _password = value; } //user.Password在类的外部只能改不能读
-            get { return _password; }
+            //get { return _password; }
         }
 
-        private User _invitedBy { get; set; }
-        private string _inviteCode { get; set; }
-        private string authCode { get; set; }
+        public User _invitedBy { get; set; }
+        public string _inviteCode { get; set; }
+        public string authCode { get; set; }
     }
     
 }
