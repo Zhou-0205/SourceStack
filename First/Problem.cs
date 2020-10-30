@@ -5,7 +5,7 @@ using System.Text;
 namespace CSharplearn
 {
     //求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish()
-    class Problem
+    class Problem:Content
     {
         private string _title { get; set; }
         private string _body { get; set; }
@@ -45,5 +45,10 @@ namespace CSharplearn
             get { return _keywords[index - 1]; }
         }
 
+        public override void publish()
+        {
+            base.publish();
+            Console.WriteLine();
+        }
     }
 }
