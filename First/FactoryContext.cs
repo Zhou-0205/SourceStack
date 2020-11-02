@@ -7,11 +7,11 @@ namespace CSharplearn
     //设计一个类FactoryContext，保证整个程序运行过程中，无论如何，外部只能获得它的唯一的一个实例化对象
     public class FactoryContext
     {
-        public static readonly FactoryContext _instance;
+        private static readonly FactoryContext _instance = new FactoryContext();
 
-        static FactoryContext()
+        public static FactoryContext GetInstance()
         {
-            _instance = new FactoryContext();
+            return _instance;
         }
 
         private FactoryContext()

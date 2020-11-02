@@ -6,7 +6,7 @@ namespace CSharplearn
 {
     //观察“一起帮”的：
     //注册/登录功能，定义一个User类，包含字段：Name（用户名）、Password（密码）和 邀请人（InvitedBy），和方法：Register()、Login() 
-    public sealed class User
+    public sealed class User :  ISendMessage, IChat
     {
         private string _name;
         private User()
@@ -44,9 +44,15 @@ namespace CSharplearn
             //get { return _password; }
         }
 
-        public User _invitedBy { get; set; }
-        public string _inviteCode { get; set; }
-        public string authCode { get; set; }
+        public User InvitedBy { get; set; }
+        public string InviteCode { get; set; }
+        public string AuthCode { get; set; }
+        public int HelpMoney { get; set; }
+        public int HelpPoint { get; set; }
+
+
+        void ISendMessage.Send(){ }
+        void IChat.Send(){ }
     }
-    
+
 }

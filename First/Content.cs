@@ -14,13 +14,16 @@ namespace CSharplearn
     {
         private string kind;
         private DateTime createtime;
+        private User author;
+        private string title;
 
-        private string[] keyword = new string[10];
         public DateTime publishtime
         {
             get { return createtime; }
         }
 
+        internal User Author { get; set; }
+        public string Title { get => title; set => title = value; }
         public Content(string kind)
         {
             this.kind = kind;

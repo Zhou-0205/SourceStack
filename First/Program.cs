@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharplearn;
+using System;
 using System.Dynamic;
 
 namespace First
@@ -8,6 +9,20 @@ namespace First
         
         static void Main(string[] args)
         {
+
+
+
+
+
+
+
+
+
+            Content content = new Article();
+            ContentService service = new ContentService();
+            service.publish(content);
+
+
             //用户依次由控制台输入：验证码、用户名和密码：
             //  如果验证码输入错误，直接输出：“*验证码错误”；
             //  如果用户名不存在，直接输出：“*用户名不存在”；
