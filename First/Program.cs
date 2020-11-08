@@ -1,26 +1,28 @@
 ﻿using CSharplearn;
 using System;
 using System.Dynamic;
+using System.IO;
 
 namespace First
 {
     class Program
     {
+        struct Test
+        {
+            public int a;
+        }
         
         static void Main(string[] args)
         {
+            //Test t1 = new Test();
+            //t1.a = null;
 
 
 
 
-
-
-
-
-
-            Content content = new Article();
-            ContentService service = new ContentService();
-            service.publish(content);
+            //Content content = new Article();
+            //ContentService service = new ContentService();
+            //service.publish(content);
 
 
             //用户依次由控制台输入：验证码、用户名和密码：
@@ -81,12 +83,12 @@ namespace First
             //}
             //用for循环输出存储在一维 / 二维数组里的源栈所有同学姓名 / 昵称
             //string[] name = new string[] { "刘伟", "龚廷义", "周丁浩", "李智博", "廖光银" };
-            //string[,] seatname = new string[2,3];
+            //string[,] seatname = new string[2, 3];
             //for (int i = 0; i < seatname.GetLength(0); i++)
             //{
             //    for (int j = 0; j < seatname.GetLength(1); j++)
             //    {
-            //        Console.WriteLine(seatname[i,j]);
+            //        Console.WriteLine(seatname[i, j]);
             //    }
             //}
             //计算并输出：99 + 97 + 95 + 93 + ...+1的值
@@ -147,24 +149,15 @@ namespace First
             //    console.writeline(a[i]);
             //}
             //设立并显示一个多维数组的值，元素值等于下标之和
-            //static void twoDimensional()
+            //int[,] sum = new int[3, 5];
+            //for (int i = 0; i < sum.GetLength(0); i++)
             //{
-            //    int[,] sum = new int[8, 5];
-            //    for (int i = 0; i < sum.GetLength(0); i++)
+            //    for (int j = 0; j < sum.GetLength(1); j++)
             //    {
-            //        for (int j = 0; j < sum.GetLength(1); j++)
-            //        {
-            //            sum[i, j] = i + j;
-            //        }
+            //        sum[i, j] = i + j;
+            //        Console.Write(sum[i,j]+" ");
             //    }
-            //    for (int k = 0; k < sum.GetLength(0); k++)
-            //    {
-            //        for (int l = 0; l < sum.GetLength(1); l++)
-            //        {
-            //            Console.Write(sum[k, l] + " ");
-            //        }
-            //        Console.WriteLine();
-            //    }
+            //    Console.WriteLine();
             //}
 
             //将之前作业封装成方法（自行思考参数和返回值），并调用执行
@@ -185,7 +178,7 @@ namespace First
             //        }
             //    }
             //}
-            
+
         }
         //计算得到源栈同学的平均成绩（精确到两位小数），方法名GetAverage()
         static double GetAverage(double[] scores)

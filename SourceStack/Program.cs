@@ -11,7 +11,7 @@ namespace SourceStack
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args)//git上对合作者项目的修改
         {
             CreateHostBuilder(args).Build().Run();
         }
