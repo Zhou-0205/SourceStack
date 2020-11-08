@@ -6,7 +6,6 @@ namespace CSharplearn
 {
     class DBMessage : ISendMessage
     {
-        void ISendMessage.Send()
-        { }
+        void ISendMessage.Send() { }
     }
 }

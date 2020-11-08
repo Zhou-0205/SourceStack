@@ -4,7 +4,8 @@ using System.Text;
 
 namespace CSharplearn
 {
-    class EmailMessage
+    class EmailMessage:ISendMessage
     {
+        void ISendMessage.Send() { }
     }
 }
