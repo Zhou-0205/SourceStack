@@ -8,15 +8,16 @@ namespace CSharplearn
     public class FactoryContext
     {
         private static readonly FactoryContext instance = new FactoryContext();
+        private FactoryContext()
+        {
+
+        }
 
         public static FactoryContext GetInstance()
         {
             return instance;
         }
 
-        private FactoryContext()
-        {
 
-        }
     }
 }
