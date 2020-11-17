@@ -7,11 +7,12 @@ namespace CsharpLearn
     //注册/登录功能，定义一个User类，
     //包含字段：Name（用户名）、Password（密码）和 邀请人（InvitedBy）
     //方法：Register()、Login()
-    public class User
+    //让User类无法被继承
+    public sealed class User : Entity
     {
         private string _name;
-        private string _password;
-        private User _invitedby;
+        //private string _password;
+        //private User _invitedby;
         //如果user.Name为“admin”，输入时修改为“系统管理员”
         public string Name
         {
