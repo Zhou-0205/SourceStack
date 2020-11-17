@@ -140,6 +140,8 @@ namespace CsharpLearn
         //  如果找到，返回该元素所在的下标；否则，返回-1
         static void Main(string[] args)
         {
+            //FactoryContext.GetInstance();
+
             //调用这些类的有参 / 无参构造函数，生成这些类的对象，调用他们的方法
             //User zdh = new User("周丁浩","123qwe");
             //User.Login(zdh.Name);
