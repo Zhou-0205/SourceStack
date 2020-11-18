@@ -8,7 +8,7 @@ namespace CsharpLearn
     //包含字段：Name（用户名）、Password（密码）和 邀请人（InvitedBy）
     //方法：Register()、Login()
     //让User类无法被继承
-    public sealed class User : Entity
+    public sealed class User : Entity, ISendMessage, IChat
     {
         private string _name;
         //private string _password;
@@ -44,6 +44,14 @@ namespace CsharpLearn
         public static void Login(string user)
         {
             Console.WriteLine($"恭喜用户{user}登陆成功");
+        }
+        void ISendMessage.Send(User receiver)
+        {
+            Console.WriteLine("发送消息");
+        }
+        void IChat.Send(User receiver)
+        {
+            Console.WriteLine("发送消息");
         }
     }
 }

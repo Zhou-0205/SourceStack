@@ -10,24 +10,22 @@ namespace CsharpLearn
     //确保每个Content对象都有kind的非空值
     //Content中的createTime，不能被子类使用，但只读属性PublishTime使用它为外部提供内容的发布时间
     //其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
-    public class Content : Entity
+    public abstract class Content : Entity
     {
         //protected string _kind;
 
-        private DateTime _createtime;
+        //private DateTime _createtime;
         public string Kind { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
-        public DateTime PublishTime { get { return _createtime; } }
+        public DateTime PublishTime { get { return DateTime.Now; } }
         public User Author { get; set; }
-        public string Coument { get; set; }
         //public Content()
         //{
         //    _kind = Kind;
         //}
         public virtual void Release()
         {
-
         }
     }
 }

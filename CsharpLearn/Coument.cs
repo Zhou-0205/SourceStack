@@ -4,16 +4,12 @@ using System.Text;
 
 namespace CsharpLearn
 {
-    public class Article : Content, IPraise
+    public class Coument : IPraise
     {
-        public string[] Keyword { get; set; }
+        public User Author { get; set; }
+        public string Body { get; set; }
         public int AgreeAmount { get; set; }
         public int DisAgreeAmount { get; set; }
-        public override void Release()
-        {
-            Author.HelpCoin--;
-            Console.WriteLine("消耗一个帮帮币");
-        }
         public void AgreeBy(User voter)
         {
             voter.HelpPoint++;

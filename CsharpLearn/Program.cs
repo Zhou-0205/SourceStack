@@ -6,6 +6,11 @@ namespace CsharpLearn
     {
         static void Main(string[] args)
         {
+            //接口
+            //ISendMessage zdh = new User();
+            //User lzb = new User();
+            //zdh.Send(lzb);
+
             //多态
             //ContentService service = new ContentService();
             //Content content;

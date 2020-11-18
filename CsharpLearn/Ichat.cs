@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SELFstudy
+namespace CsharpLearn
 {
-    public class Suggest:Content
+    public interface IChat
     {
+        void Send(User receiver);
     }
 }
