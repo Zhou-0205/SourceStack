@@ -8,7 +8,7 @@ namespace CsharpLearn
     public class HelpMoney : Entity
     {
         private DateTime Time { get; set; }
-        private int Useable { get; set; }
+        private int Usable { get; set; }
         private int Freeza { get; set; }
         private string Kind { get; set; }
         private int Change { get; set; }

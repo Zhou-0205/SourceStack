@@ -49,9 +49,10 @@ namespace CsharpLearn
         //Load(int Id)：根据Id从数据库获取一条求助
         //Delete(int Id)：根据Id删除某个求助
         //repoistory：可用于在底层实现上述方法和数据库的连接操作等
-        public void publish()
+        public override void Release()
         {
-            Console.WriteLine("保存到数据库");
+            Author.HelpCoin -= _reward;
+            Console.WriteLine("需要消耗其设置悬赏数量的帮帮币");
         }
         public void load(int id)
         {

@@ -13,6 +13,11 @@ namespace CsharpLearn
         private string _name;
         //private string _password;
         //private User _invitedby;
+        public string Password { private get; set; }
+        public User Invitedby { get; set; }
+        public int HelpCoin { get; set; }
+        public int HelpPoint { get; set; }
+        public int HelpBean { get; set; }
         //如果user.Name为“admin”，输入时修改为“系统管理员”
         public string Name
         {
@@ -26,15 +31,14 @@ namespace CsharpLearn
             }
         }
         //user.Password在类的外部只能改不能读
-        public string Password { private get; set; }
-        public User Invitedby { get; set; }
+
 
         //每一个User对象一定有Name和Password赋值
-        public User(string Name, string Password)
-        {
-            _name = Name;
-            _password = Password;
-        }
+        //public User(string Name, string Password)
+        //{
+        //    _name = Name;
+        //    _password = Password;
+        //}
         public static void Register()
         { }
         public static void Login(string user)

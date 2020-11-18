@@ -6,6 +6,16 @@ namespace CsharpLearn
     {
         static void Main(string[] args)
         {
+            //多态
+            //ContentService service = new ContentService();
+            //Content content;
+            //content = new Article();
+            //service.Publish(content);
+            //content = new Suggest();
+            //service.Publish(content);
+            //content = new Problem();
+            //service.Publish(content);
+
             //继承
             //实例化文章和意见建议，调用他们：
             //继承自父类的属性和方法
@@ -291,6 +301,6 @@ namespace CsharpLearn
         //实现二分查找，方法名BinarySeek(int[] numbers, int target)：
         //  传入一个有序（从大到小/从小到大）数组和数组中要查找的元素
         //  如果找到，返回该元素所在的下标；否则，返回-1
-        
+
     }
 }

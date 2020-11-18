@@ -12,7 +12,7 @@ namespace CsharpLearn
     //其他方法和属性请自行考虑，尽量贴近一起帮的功能实现。
     public class Content : Entity
     {
-        protected string _kind;
+        //protected string _kind;
 
         private DateTime _createtime;
         public string Kind { get; set; }
@@ -21,9 +21,13 @@ namespace CsharpLearn
         public DateTime PublishTime { get { return _createtime; } }
         public User Author { get; set; }
         public string Coument { get; set; }
-        public Content()
+        //public Content()
+        //{
+        //    _kind = Kind;
+        //}
+        public virtual void Release()
         {
-            _kind = Kind;
+
         }
     }
 }
