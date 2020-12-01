@@ -3,41 +3,82 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - SourceStack</title>
+    <title>@ViewData["Title"] - 源栈</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .foot {
+            width: 1200px;
+            height: 150px;
+            clear: both;
+            padding-left: 100px;
+            padding-top: 20px;
+        }
+
+        .put {
+            height: 80px;
+            line-height: 80px;
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">SourceStack</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+        <ul class="nav justify-content-end" style="border-color:gainsboro">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">求助</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">督导班</a>
+                    <a class="dropdown-item" href="#">列表</a>
+                    <a class="dropdown-item" href="#">疑问发布</a>
+                    <a class="dropdown-item" href="#">疑问列表</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">列表</a>
+                    <a class="dropdown-item" href="#">发布</a>
                 </div>
-            </div>
-        </nav>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">督促</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">求督促</a>
+                    <a class="dropdown-item" href="#">督促别人</a>
+                    <a class="dropdown-item" href="#">我的目标</a>
+                    <a class="dropdown-item" href="#">我的督促</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">文章</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">列表</a>
+                    <a class="dropdown-item" href="#">开通</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">未登录</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">登陆</a>
+                    <a class="dropdown-item" href="#">注册</a>
+                    <a class="dropdown-item" href="#">忘记密码</a>
+                </div>
+            </li>
+        </ul>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <hr />
+    <div>
+        @RenderBody()
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - SourceStack - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <footer>
+        <div class="foot">
+            <a href="#">关于我们</a>&nbsp;|
+            <a href="#">常见问题</a>&nbsp;|
+            <a href="#">意见建议</a>&nbsp;|
+            <a href="#">历史通知</a>&nbsp;|
+            <a href="#" style="color:darkseagreen">友情捐赠</a>&nbsp;|
+            <a href="#">诚邀合伙人</a><br />
+            友情链接：
+            <div class="put">
+                <a href="#">渝ICP备18007191号（备案）</a>©2020-首顾科技
+            </div>
         </div>
     </footer>
 
