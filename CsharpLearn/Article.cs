@@ -6,7 +6,7 @@ namespace CsharpLearn
 {
     public class Article : Content, IPraise
     {
-        public string[] Keyword { get; set; }
+        public string[] Keywords { get; set; }
         public int AgreeAmount { get; set; }
         public int DisAgreeAmount { get; set; }
         public override void Release()

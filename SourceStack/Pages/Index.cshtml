@@ -1,9 +1,18 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Index";
 }
 
-<div class="text-center">
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+@for (int i = 1; i < 5; i++)
+{
+    <div style="text-align:center">
+        @for (int j = 1; j <= i * 2 - 1; j++)
+        {
+            string color = i % 2 == 0 ? "blue" : "red";
+            <span style="color:@color">i</span>
+        }
+    </div>
+}
+
+

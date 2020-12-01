@@ -17,7 +17,7 @@ namespace CsharpLearn
         //public string Title { get; set; }
         //public string Body { get; set; }
         //problem.Reward不能为负数
-        public string[] Keyword { get; set; }
+        public string[] Keywords { get; set; }
         public int Reword
         {
             get { return _reward; }
