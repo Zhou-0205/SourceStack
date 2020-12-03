@@ -11,6 +11,7 @@ namespace SourceStack.Repository
         private static IList<Article> articles;
         public ArticleRepository()
         {
+            UserRepository userRepository = new UserRepository();
             articles = new List<Article>
             {
                 new Article
@@ -30,11 +31,7 @@ namespace SourceStack.Repository
                         new KeyWord{Name="对比"},
                         new KeyWord{Name="高阶语法"}
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(1)
                 },
                 new Article
                 {
@@ -66,11 +63,7 @@ namespace SourceStack.Repository
                             Name="并发"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(2)
                 },
                 new Article
                 {
@@ -106,11 +99,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(3)
                 },
                 new Article
                 {
@@ -147,11 +136,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(4)
                 },
                 new Article
                 {
@@ -188,11 +173,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(5)
                 },
                 new Article
                 {
@@ -229,11 +210,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(1)
                 },
                 new Article
                 {
@@ -270,11 +247,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(2)
                 },
                 new Article
                 {
@@ -311,11 +284,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(3)
                 },
                 new Article
                 {
@@ -334,11 +303,7 @@ namespace SourceStack.Repository
                         new KeyWord{Name="对比"},
                         new KeyWord{Name="高阶语法"}
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(4)
                 },
                 new Article
                 {
@@ -370,11 +335,7 @@ namespace SourceStack.Repository
                             Name="并发"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(5)
                 },
                 new Article
                 {
@@ -410,11 +371,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(1)
                 },
                 new Article
                 {
@@ -451,11 +408,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(2)
                 },
                 new Article
                 {
@@ -492,11 +445,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(3)
                 },
                 new Article
                 {
@@ -533,11 +482,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(5)
                 },
                 new Article
                 {
@@ -574,11 +519,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(1)
                 },
                 new Article
                 {
@@ -597,11 +538,7 @@ namespace SourceStack.Repository
                         new KeyWord{Name="对比"},
                         new KeyWord{Name="高阶语法"}
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(2)
                 },
                 new Article
                 {
@@ -633,11 +570,7 @@ namespace SourceStack.Repository
                             Name="并发"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(2)
                 },
                 new Article
                 {
@@ -673,11 +606,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(3)
                 },
                 new Article
                 {
@@ -714,11 +643,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(4)
                 },
                 new Article
                 {
@@ -755,11 +680,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(5)
                 },
                 new Article
                 {
@@ -796,11 +717,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(1)
                 },
                 new Article
                 {
@@ -837,11 +754,7 @@ namespace SourceStack.Repository
                             Name="对象"
                         }
                     },
-                    Author=new User
-                    {
-                        Id=1,
-                        Name="小刘",
-                    }
+                    Author=userRepository.Find(2)
                 },
             };
         }

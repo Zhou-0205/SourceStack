@@ -3,7 +3,6 @@
 @{
     ViewData["Title"] = "文章列表";
     Layout = "Layout/_Articlelist";
-    int CurrentpageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
 }
 @foreach (var item in Model.Article)
 {
@@ -28,35 +27,32 @@
 {
 
 }
+@{
+    string ApI = "Article?pageIndex";
+    int MPI = Model.PageIndex;
+    int MPC = Model.PagesCount;
+}
 <nav aria-label="Page navigation example">
     <ul class="pagination">
-        @if (CurrentpageIndex != 1)
+        @if (MPI != 1)
         {
             <li class="page-item">
-                <a class="page-link" href="Article?pageIndex=@(CurrentpageIndex-1)" aria-label="Previous">
+                <a class="page-link" href="@ApI=@(MPI-1)" aria-label="Previous">
                     <span aria-hidden="true">&laquo;</span>
                 </a>
             </li>
         }
-        @for (int i = 0; i <= Model.PagesCount; i++)
+        @for (int i = 0; i <= MPC; i++)
         {
-            if (CurrentpageIndex == (i + 1))
-            {
-                <li class="page-item active">
-                    <a class="page-link" href="Article?pageIndex=@(i + 1)">@(i + 1)</a>
-                </li>
-            }
-            else
-            {
-                <li class="page-item">
-                    <a class="page-link" href="Article?pageIndex=@(i + 1)">@(i + 1)</a>
-                </li>
-            }
+            string active = MPI == (i + 1) ? "active" : null;
+            <li class="page-item @active">
+                <a class="page-link" href="@ApI=@(i + 1)">@(i + 1)</a>
+            </li>
         }
-        @if (CurrentpageIndex != Model.PagesCount + 1)
+        @if (MPI != MPC + 1)
         {
             <li class="page-item">
-                <a class="page-link" href="Article?pageIndex=@(CurrentpageIndex+1)" aria-label="Next">
+                <a class="page-link" href="@ApI=@(MPI+1)" aria-label="Next">
                     <span aria-hidden="true">&raquo;</span>
                 </a>
             </li>

@@ -18,14 +18,14 @@ namespace SourceStack.Pages.Articles
         }
         public IList<Article> Article { get; set; }
         public int PagesCount { get; set; }
+        public int PageIndex { get; set; }
 
         const int pageSize = 7;
         public void OnGet()
         {
-            int pageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
-
+            PageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
             PagesCount = articleRepository.ArticleCount() / pageSize;
-            Article = articleRepository.Get(pageIndex,pageSize);
+            Article = articleRepository.Get(PageIndex,pageSize);
         }
 
 
