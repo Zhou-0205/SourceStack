@@ -17,9 +17,14 @@ namespace SourceStack.Articles
             singleRepository = new SingleRepository();
         }
         public Article Article { get; set; }
+        public Article Previous { get; set; }
+        public Article Next { get; set; }
         public void OnGet()
         {
-            Article = singleRepository.Find(1);
+            int id = Convert.ToInt32(Request.Query["Id"][0]);
+            Article = singleRepository.Find(id);
+            Previous = singleRepository.Find(id - 1);
+            Next = singleRepository.Find(id + 1);
         }
     }
 }

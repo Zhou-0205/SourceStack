@@ -38,8 +38,25 @@
     <div style="margin-top:30px">
         <input type="checkbox" />在系列<a href="#">Java vs C#</a>中的
         <div style="border:1px dashed;border-radius:5px;">
-            <span>上一篇：<a href="#">异步方法和TPL： async / await / Parallel</a></span><br />
-            <span>下一篇：<a></a></span>
+            上一篇：
+            @if (Model.Previous != null)
+            {
+                <a href="Single?id=@Model.Previous.Id">@Model.Previous.Title</a>
+            }
+            else
+            {
+                <a>已经是第一篇了</a>
+            }
+            <br />
+            下一篇：
+            @if (Model.Next != null)
+            {
+                <a href="Single?id=@Model.Next.Id">@Model.Next.Title</a>
+            }
+            else
+            {
+                <a>已经是第最后一篇了</a>
+            }
         </div>
     </div>
     <hr />
