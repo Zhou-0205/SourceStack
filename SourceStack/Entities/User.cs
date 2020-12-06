@@ -11,5 +11,10 @@ namespace SourceStack.Entities
         public string Password { get; set; }
         public User InvitedBy { get; set; }
         public string InvitedCode { get; set; }
+        public int BangMoney { get; set; }
+        public void BMAdd()
+        {
+            InvitedBy.BangMoney += 10;
+        }
     }
 }

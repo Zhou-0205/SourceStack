@@ -8,10 +8,10 @@ namespace SourceStack.Repository
 {
     public class UserRepository
     {
-        private static List<User> Users;
+        private static List<User> users;
         public UserRepository()
         {
-            Users = new List<User>
+            users = new List<User>
             {
                 new User
                 {
@@ -42,7 +42,11 @@ namespace SourceStack.Repository
         }
         public User Find(int id)
         {
-            return Users.Where(u => u.Id == id).SingleOrDefault();
+            return users.Where(u => u.Id == id).SingleOrDefault();
+        }
+        public void Save(User user)
+        {
+            users.Add(user);
         }
     }
 }
