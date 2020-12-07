@@ -1,5 +1,5 @@
 ﻿@page
-@model SourceStack.Pages.Articles.ArticleModel
+@model SourceStack.Pages.Article.IndexModel
 @{
     ViewData["Title"] = "文章列表";
     Layout = "Layout/_Articlelist";
@@ -7,7 +7,7 @@
 @foreach (var item in Model.Article)
 {
     <div>
-        <h4><a href="/Articles/Single?id=@item.Id">@item.Title</a></h4>
+        <h4><a href="/Article/Single?id=@item.Id">@item.Title</a></h4>
         <div>
             <small>@item.PublishTime.ToString("yyyy年MM月 dd日hh点mm分")</small>
             <p style="float:right">作者：<a href="#">@item.Author.Name</a></p>
@@ -28,7 +28,7 @@
 
 }
 @{
-    string ApI = "Article?pageIndex";
+    string ApI = "Index?pageIndex";
     int MPI = Model.PageIndex;
     int MPC = Model.PagesCount;
 }

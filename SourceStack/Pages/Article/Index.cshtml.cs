@@ -5,18 +5,18 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using SourceStack.Repository;
-using SourceStack.Entities;
+using E = SourceStack.Entities;
 
-namespace SourceStack.Pages.Articles
+namespace SourceStack.Pages.Article
 {
-    public class ArticleModel : PageModel
+    public class IndexModel : PageModel
     {
         private ArticleRepository articleRepository;
-        public ArticleModel()
+        public IndexModel()
         {
             articleRepository = new ArticleRepository();
         }
-        public IList<Article> Article { get; set; }
+        public IList<E.Article> Article { get; set; }
         public int PagesCount { get; set; }
         public int PageIndex { get; set; }
 
@@ -25,7 +25,7 @@ namespace SourceStack.Pages.Articles
         {
             PageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
             PagesCount = articleRepository.ArticleCount() / pageSize;
-            Article = articleRepository.Get(PageIndex,pageSize);
+            Article = articleRepository.Get(PageIndex, pageSize);
         }
 
 

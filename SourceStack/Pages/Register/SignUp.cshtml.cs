@@ -9,10 +9,10 @@ using SourceStack.Repository;
 
 namespace SourceStack.Pages.Register
 {
-    public class SigninModel : PageModel
+    public class SignUpModel : PageModel
     {
         private UserRepository userRepository;
-        public SigninModel()
+        public SignUpModel()
         {
             userRepository = new UserRepository();
         }

@@ -1,20 +1,20 @@
-﻿using SourceStack.Entities;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SourceStack.Entities;
 
 namespace SourceStack.Repository
 {
     public class ArticleRepository
     {
-        private static IList<Article> articles;
+        private static IList<Entities.Article> articles;
         public ArticleRepository()
         {
             UserRepository userRepository = new UserRepository();
-            articles = new List<Article>
+            articles = new List<Entities.Article>
             {
-                new Article
+                new Entities.Article
                 {
                     Id=1,
                     Title=@"高阶：泛型 / 集合 / Lambda / 异常 / IO / 多线程",
@@ -33,7 +33,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(1)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=2,
                     Title=@"异步方法和TPL： async / await / Parallel",
@@ -65,7 +65,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(2)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=3,
                     Title=@"面向对象：类和对象/封装/继承/多态/抽象接口/枚举/反射/String",
@@ -101,7 +101,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(3)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=4,
                     Title=@"C#-面向对象：string还是StringBuilder？",
@@ -138,7 +138,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(4)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=5,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -175,7 +175,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(5)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=6,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -212,7 +212,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(1)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=7,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -249,7 +249,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(2)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=8,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -286,7 +286,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(3)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=9,
                     Title=@"高阶：泛型 / 集合 / Lambda / 异常 / IO / 多线程",
@@ -305,7 +305,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(4)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=10,
                     Title=@"异步方法和TPL： async / await / Parallel",
@@ -337,7 +337,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(5)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=11,
                     Title=@"面向对象：类和对象/封装/继承/多态/抽象接口/枚举/反射/String",
@@ -373,7 +373,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(1)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=12,
                     Title=@"C#-面向对象：string还是StringBuilder？",
@@ -410,7 +410,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(2)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=13,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -447,7 +447,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(3)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=14,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -484,7 +484,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(5)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=15,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -521,7 +521,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(1)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=16,
                     Title=@"高阶：泛型 / 集合 / Lambda / 异常 / IO / 多线程",
@@ -540,7 +540,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(2)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=17,
                     Title=@"异步方法和TPL： async / await / Parallel",
@@ -572,7 +572,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(2)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=18,
                     Title=@"面向对象：类和对象/封装/继承/多态/抽象接口/枚举/反射/String",
@@ -608,7 +608,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(3)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=19,
                     Title=@"C#-面向对象：string还是StringBuilder？",
@@ -645,7 +645,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(4)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=20,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -682,7 +682,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(5)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=21,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -719,7 +719,7 @@ namespace SourceStack.Repository
                     },
                     Author=userRepository.Find(1)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=22,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -759,7 +759,7 @@ namespace SourceStack.Repository
             };
         }
 
-        internal IList<Article> Get(int pageIndex, int pageSize)
+        internal IList<Entities.Article> Get(int pageIndex, int pageSize)
         {
             return articles
                 .Skip((pageIndex - 1) * pageSize)
@@ -772,7 +772,7 @@ namespace SourceStack.Repository
         }
         void Delete()
         { }
-        void Save(Article article)
+        void Save(Entities.Article article)
         {
             articles.Add(article);
         }

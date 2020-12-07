@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace SourceStack.Pages.Register
 {
-    public class LoginModel : PageModel
+    public class LogInModel : PageModel
     {
         public void OnGet()
         {

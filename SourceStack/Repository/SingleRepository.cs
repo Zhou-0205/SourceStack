@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SourceStack.Entities;
-using SourceStack.Repository;
 
-public class SingleRepository
+namespace SourceStack.Repository
 {
-    private static IList<Article> articles;
-    public SingleRepository()
+    public class SingleRepository
     {
-        UserRepository userRepository = new UserRepository();
-        articles = new List<Article>
+        private static IList<Entities.Article> articles;
+        public SingleRepository()
+        {
+            UserRepository userRepository = new UserRepository();
+            articles = new List<Entities.Article>
             {
-                new Article
+                new Entities.Article
                 {
                     Id=1,
                     Title=@"高阶：泛型 / 集合 / Lambda / 异常 / IO / 多线程",
@@ -49,7 +50,7 @@ public class SingleRepository
                     },
                     Author=userRepository.Find(1)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=2,
                     Title=@"异步方法和TPL： async / await / Parallel",
@@ -85,7 +86,7 @@ public class SingleRepository
                     },
                     Author=userRepository.Find(2)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=3,
                     Title=@"面向对象：类和对象/封装/继承/多态/抽象接口/枚举/反射/String",
@@ -121,7 +122,7 @@ public class SingleRepository
                     },
                     Author=userRepository.Find(3)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=4,
                     Title=@"C#-面向对象：string还是StringBuilder？",
@@ -157,7 +158,7 @@ public class SingleRepository
                     },
                     Author=userRepository.Find(4)
                 },
-                new Article
+                new Entities.Article
                 {
                     Id=5,
                     Title=@"C#-面向对象：争议TDD（测试驱动开发）",
@@ -195,10 +196,12 @@ public class SingleRepository
                 }
 
             };
-    }
-    public Article Find(int id)
-    {
-        return articles.Where(a => a.Id == id).SingleOrDefault();
+        }
+        public Entities.Article Find(int id)
+        {
+            return articles.Where(a => a.Id == id).SingleOrDefault();
+        }
     }
 }
+
 

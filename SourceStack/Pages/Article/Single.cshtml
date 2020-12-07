@@ -1,5 +1,5 @@
 ﻿@page
-@model SourceStack.Articles.SingleModel
+@model SourceStack.Article.SingleModel
 @{
     ViewData["Title"] = "高阶：泛型 / 集合 / Lambda / 异常 / IO / 多线程";
     Layout = "Layout/_Single";
@@ -32,8 +32,8 @@
         <a href="#">投稿人推广：</a><a href="#"> 学编程，来 “源栈”！飞哥精品小班等着你……</a>
     </div>
     <div style="margin-top:20px;">
-        <input style="background-color:cornflowerblue;border-radius:5px;color:white;border: 0;" type="submit" value="提交">
-        <input style="background-color:gainsboro;border-radius: 5px; border: 0;" type="reset" value="重置">
+        <input type="submit" value="提交" class="btn btn-primary">
+        <input type="reset" value="重置" class="btn btn-light">
     </div>
     <div style="margin-top:30px">
         <input type="checkbox" />在系列<a href="#">Java vs C#</a>中的

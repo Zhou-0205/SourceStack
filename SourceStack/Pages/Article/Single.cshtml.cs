@@ -4,10 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using SourceStack.Entities;
+using E = SourceStack.Entities;
 using SourceStack.Repository;
 
-namespace SourceStack.Articles
+namespace SourceStack.Article
 {
     public class SingleModel : PageModel
     {
@@ -16,9 +16,9 @@ namespace SourceStack.Articles
         {
             singleRepository = new SingleRepository();
         }
-        public Article Article { get; set; }
-        public Article Previous { get; set; }
-        public Article Next { get; set; }
+        public E.Article Article { get; set; }
+        public E.Article Previous { get; set; }
+        public E.Article Next { get; set; }
         public void OnGet()
         {
             int id = Convert.ToInt32(Request.Query["Id"][0]);
