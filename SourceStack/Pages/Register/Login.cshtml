@@ -1,4 +1,31 @@
 ﻿@page
 @model SourceStack.Pages.Register.LogInModel
 @{
+    Layout = "Layout/_Register";
+    ViewData["Title"] = "登录";
+}
+<from method="post" asp-page="Register/LogIn">
+    <div>
+        <label>用户名：(*必填)</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label>密码：(*必填)</label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <!--<div>
+        <label>验证码：(*必填)</label>
+        <input-->
+    @*asp-for=""*@
+    <!--class="form-control" />
+    </div>-->
+    <div style="margin-top:20px;">
+        <input type="submit" value="登录" class="btn btn-primary">
+        <input type="reset" value="重置" class="btn btn-light">
+    </div>
+</from>
+@section Register
+{
 }

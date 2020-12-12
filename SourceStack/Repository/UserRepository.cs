@@ -2,51 +2,89 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Data.Common;
+using System.Data.SqlClient;
 using SourceStack.Entities;
+using System.Data;
 
 namespace SourceStack.Repository
 {
     public class UserRepository
     {
-        private static List<User> users;
-        public UserRepository()
+        private const string Id = "Id";
+        private const string Name = "Name";
+        private const string Password = "Password";
+        private const string InvitedBy = "InvitedBy";
+        private const string InvitedCode = "InvitedCode";
+        private const string BangMoney = "BangMoney";
+
+        string connectionString = @"Data Source=.;
+                                    Initial Catalog=17Bang;
+                                    Integrated security=true;";
+        public User LogOn(string name)
         {
-            users = new List<User>
+            using (DbConnection connection = new SqlConnection(connectionString))
             {
-                new User
+                connection.Open();
+
+                IDbCommand command = new SqlCommand();
+                command.CommandText =
+                    $"SELECT {Id},{Name},{Password},{InvitedBy},{InvitedCode},{BangMoney}" +
+                    $"FROM [User] " +
+                    $"WHERE [Name] = @Name";
+                command.Connection = connection;
+
+                IDataParameter pName = new SqlParameter("@Name", name);
+                command.Parameters.Add(pName);
+
+                IDataReader reader = command.ExecuteReader();
+
+                User user = new User();
+
+                if (!reader.Read())
                 {
-                    Id=1,
-                    Name="小刘",
-                },
-                new User
-                {
-                    Id=2,
-                    Name="小张",
-                },
-                new User
-                {
-                    Id=3,
-                    Name="小李"
-                },
-                new User
-                {
-                    Id=4,
-                    Name="小王"
-                },
-                new User
-                {
-                    Id=5,
-                    Name="小赵"
+                    return null;
                 }
-            };
-        }
-        public User Find(int id)
-        {
-            return users.Where(u => u.Id == id).SingleOrDefault();
+
+                user.Id = (int)reader["Id"];
+                user.Name = (string)reader["Name"];
+                user.Password = (string)reader["Password"];
+                user.InvitedBy = new User
+                {
+                    Id = (int)reader["InvitedBy"]
+                };
+                user.InvitedCode = (string)reader["InvitedCode"];
+                user.BangMoney = (int)reader["BangMoney"];
+
+                return user;
+            }
+
         }
         public void Save(User user)
         {
-            users.Add(user);
+            using (DbConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                IDbCommand command = new SqlCommand();
+                command.CommandText =
+                    $"INSERT INTO [User]([Name],[Password]) " +
+                    $"VALUES(N'@Name',N'@Passowrd')";
+                command.Connection = connection;
+
+                IDataParameter pName = new SqlParameter("@Name", user.Name);
+                IDataParameter pPassword = new SqlParameter("@Passowrd", user.Password);
+
+                command.Parameters.Add(pName);
+                command.Parameters.Add(pPassword);
+
+                int rows = command.ExecuteNonQuery();
+            }
+        }
+        public User Find(int id)
+        {
+            User user = new User();
+            return user;
         }
     }
 }

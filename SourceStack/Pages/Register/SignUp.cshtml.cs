@@ -9,6 +9,7 @@ using SourceStack.Repository;
 
 namespace SourceStack.Pages.Register
 {
+    [BindProperties]
     public class SignUpModel : PageModel
     {
         private UserRepository userRepository;
@@ -24,8 +25,11 @@ namespace SourceStack.Pages.Register
         }
         public void OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return;
+            }
             userRepository.Save(NewUser);
-            NewUser.BMAdd();
         }
     }
 }
