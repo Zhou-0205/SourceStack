@@ -23,7 +23,8 @@ namespace SourceStack.Pages.Article
         const int pageSize = 7;
         public void OnGet()
         {
-            PageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
+            //PageIndex = Convert.ToInt32(Request.Query["pageIndex"][0]);
+            PageIndex = Convert.ToInt32(RouteData.Values["pageIndex"]);
             PagesCount = articleRepository.ArticleCount() / pageSize;
             Article = articleRepository.Get(PageIndex, pageSize);
         }

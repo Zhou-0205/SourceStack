@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.Common;
+using System.Data.SqlClient;
 
 namespace CsharpLearn
 {
@@ -6,27 +8,27 @@ namespace CsharpLearn
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("请输入要打印的行数：");
-            int n = Convert.ToInt32(Console.ReadLine());
-            Console.Clear(); //清除以上显示的内容
+            //Console.WriteLine("请输入要打印的行数：");
+            //int n = Convert.ToInt32(Console.ReadLine());
+            //Console.Clear(); //清除以上显示的内容
 
-            //这层循环控制打印的行数
-            for (int i = 1; i <= n; i++)
-            {
-                //这层循环控制每行前面打印的空格数
-                for (int k = 1; k <= n - i; k++)
-                {
-                    Console.Write(" ");
-                }
-                //这层循环控制每行前面打印*的个数
-                for (int j = 1; j <= 2 * i - 1; j++)
-                {
-                    Console.Write("i");
-                }
-                //每打印完一行换一下行
-                Console.Write("\n");
-            }
-            Console.ReadKey();
+            ////这层循环控制打印的行数
+            //for (int i = 1; i <= n; i++)
+            //{
+            //    //这层循环控制每行前面打印的空格数
+            //    for (int k = 1; k <= n - i; k++)
+            //    {
+            //        Console.Write(" ");
+            //    }
+            //    //这层循环控制每行前面打印*的个数
+            //    for (int j = 1; j <= 2 * i - 1; j++)
+            //    {
+            //        Console.Write("i");
+            //    }
+            //    //每打印完一行换一下行
+            //    Console.Write("\n");
+            //}
+            //Console.ReadKey();
 
             //接口
             //ISendMessage zdh = new User();

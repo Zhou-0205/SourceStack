@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
@@ -11,7 +13,7 @@ namespace SourceStack
 {
     public class Program
     {
-        public static void Main(string[] args)//git上对合作者项目的修改
+        public static void Main(string[] args)
         {
             CreateHostBuilder(args).Build().Run();
         }

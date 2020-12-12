@@ -1,7 +1,7 @@
 ﻿@page
 @model SourceStack.Article.SingleModel
 @{
-    ViewData["Title"] = "高阶：泛型 / 集合 / Lambda / 异常 / IO / 多线程";
+    ViewData["Title"] = "";
     Layout = "Layout/_Single";
 }
 <div>
@@ -41,7 +41,7 @@
             上一篇：
             @if (Model.Previous != null)
             {
-                <a href="Single?id=@Model.Previous.Id">@Model.Previous.Title</a>
+                <a href="@Model.Previous.Id">@Model.Previous.Title</a>
             }
             else
             {
@@ -51,7 +51,7 @@
             下一篇：
             @if (Model.Next != null)
             {
-                <a href="Single?id=@Model.Next.Id">@Model.Next.Title</a>
+                <a href="@Model.Next.Id">@Model.Next.Title</a>
             }
             else
             {

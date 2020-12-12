@@ -21,7 +21,8 @@ namespace SourceStack.Article
         public E.Article Next { get; set; }
         public void OnGet()
         {
-            int id = Convert.ToInt32(Request.Query["Id"][0]);
+            //int id = Convert.ToInt32(Request.Query["Id"][0]);
+            int id = Convert.ToInt32(RouteData.Values["Id"]);
             Article = singleRepository.Find(id);
             Previous = singleRepository.Find(id - 1);
             Next = singleRepository.Find(id + 1);
