@@ -18,9 +18,8 @@ namespace SourceStack.Repository
         private const string InvitedCode = "InvitedCode";
         private const string BangMoney = "BangMoney";
 
-        string connectionString = @"Data Source=.;
-                                    Initial Catalog=17Bang;
-                                    Integrated security=true;";
+        string connectionString = 
+            @"Data Source=.;Initial Catalog=17Bang;Integrated security=true;";
         public User LogOn(string name)
         {
             using (DbConnection connection = new SqlConnection(connectionString))
@@ -45,17 +44,22 @@ namespace SourceStack.Repository
                 {
                     return null;
                 }
-
-                user.Id = (int)reader["Id"];
-                user.Name = (string)reader["Name"];
-                user.Password = (string)reader["Password"];
-                user.InvitedBy = new User
+                if (reader.Read())
                 {
-                    Id = (int)reader["InvitedBy"]
-                };
-                user.InvitedCode = (string)reader["InvitedCode"];
-                user.BangMoney = (int)reader["BangMoney"];
-
+                    user.Id = (int)reader["Id"];
+                    user.Name = (string)reader["Name"];
+                    user.Password = (string)reader["Password"];
+                    user.InvitedBy = new User
+                    {
+                        Id = (int)reader["InvitedBy"]
+                    };
+                    user.InvitedCode = (string)reader["InvitedCode"];
+                    user.BangMoney = (int)reader["BangMoney"];
+                }
+                else
+                {
+                    return null;
+                }
                 return user;
             }
 

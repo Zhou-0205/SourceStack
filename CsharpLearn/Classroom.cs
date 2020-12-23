@@ -4,8 +4,8 @@ using System.Text;
 
 namespace CsharpLearn
 {
-    public class Entity
+    class Classroom : Entity
     {
-        public int Id { get; set; }
+        public string Name { get; set; }
     }
 }
