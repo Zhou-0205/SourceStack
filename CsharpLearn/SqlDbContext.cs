@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -16,13 +17,25 @@ namespace CsharpLearn
             optionsBuilder.UseSqlServer(connstr);
 
             base.OnConfiguring(optionsBuilder);
+#if debug
+            optionsBuilder
+                .UseSqlServer(connstr)
+                .EnableSensitiveDataLogging()
+                .LogTo
+                (
+                    (id, level) => level == LogLevel.Error,
+                    log => Console.WriteLine(log)
+                );
+#endif
+
+
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>()
                 .HasCheckConstraint("CK_Createtime", "Createtime >= '2000/1/1'")
                 ;
-            base.OnModelCreating(modelBuilder); 
+            base.OnModelCreating(modelBuilder);
         }
     }
 }
