@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CsharpLearn
@@ -9,7 +10,7 @@ namespace CsharpLearn
     class SqlDbContext : DbContext
     {
         public DbSet<Student> students { get; set; }
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             string connstr = @"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=19bang;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
@@ -17,16 +18,18 @@ namespace CsharpLearn
             optionsBuilder.UseSqlServer(connstr);
 
             base.OnConfiguring(optionsBuilder);
-#if debug
+
             optionsBuilder
                 .UseSqlServer(connstr)
-                .EnableSensitiveDataLogging()
+#if Debug
+                .EnableSensitiveDataLogging(true)
+#endif
                 .LogTo
                 (
                     (id, level) => level == LogLevel.Error,
                     log => Console.WriteLine(log)
                 );
-#endif
+
 
 
         }

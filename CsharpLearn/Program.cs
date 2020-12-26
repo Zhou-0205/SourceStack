@@ -43,6 +43,7 @@ namespace CsharpLearn
             context.SaveChanges();
             //不加载User对象，仅凭其Id用一句Update SQL语句完成上题
             Student s2 = new Student { Id = 1 };
+            context.Attach<Student>(s2);
             s2.Name = "小薰";
             context.SaveChanges();
             //删除该用户
