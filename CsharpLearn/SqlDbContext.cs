@@ -11,6 +11,10 @@ namespace CsharpLearn
     {
         public DbSet<Student> students { get; set; }
         public IQueryable<Problem> Problems { get; set; }
+        public DbSet<Content> contents { get; set; }
+        public DbSet<Suggest> suggests { get; set; }
+        public DbSet<Article> articles { get; set; }
+        public DbSet<Blog> blogs { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -45,6 +49,8 @@ namespace CsharpLearn
                 .HasOne<Email>(u => u.Email)
                 .WithOne(e => e.Author)
                 .HasForeignKey<User>(u => u.Id);
+
+            
         }
     }
 }
