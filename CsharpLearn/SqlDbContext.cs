@@ -40,6 +40,11 @@ namespace CsharpLearn
                 .HasCheckConstraint("CK_Createtime", "Createtime >= '2000/1/1'")
                 ;
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<User>()
+                .HasOne<Email>(u => u.Email)
+                .WithOne(e => e.Author)
+                .HasForeignKey<User>(u => u.Id);
         }
     }
 }

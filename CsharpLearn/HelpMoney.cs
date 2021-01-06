@@ -14,13 +14,5 @@ namespace CsharpLearn
         private int Change { get; set; }
         private string Notes { get; set; }
 
-        public void gain(int num)
-        {
-
-        }
-        public void freeze(int num)
-        {
-
-        }
     }
 }
