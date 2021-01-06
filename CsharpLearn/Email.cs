@@ -8,6 +8,7 @@ namespace CsharpLearn
     {
         public string Title { get; set; }
         public string body { get; set; }
+        public string EmailAddress { get; set; }
         public User Author { get; set; }
     }
 }

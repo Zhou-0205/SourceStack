@@ -9,6 +9,6 @@ namespace CsharpLearn
         public User Invitedby { get; set; }
         public string Name { get; set; }
         public string Password { get; set; }
-        public Email Email { get; set; }
+        public Email Send { get; set; }
     }
 }

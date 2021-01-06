@@ -51,10 +51,18 @@ namespace CsharpLearn
             //context.Remove(s3);
             //context.SaveChanges();
 
-            var db = context.Database;
+            User user = new User { Name = "zdh", Password = "123456" };
+            Email email = new Email { Title = "注册", body = "邀请您注册", EmailAddress = "1234567@qq.com" };
+            user.Send = email;
+            email.Author = user;
 
-            db.EnsureDeleted();
-            db.EnsureCreated();
+            context.Add<User>(user);
+            context.Add<Email>(email);
+            context.SaveChanges();
+
+            //var db = context.Database;
+            //db.EnsureDeleted();
+            //db.EnsureCreated();
         }
     }
 }
