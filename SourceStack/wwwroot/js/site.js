@@ -8,3 +8,13 @@ sname = "lw";
 alert(sname);
 sname = "lzb";
 alert(sname);
+
+var problem =
+{
+    title: "SqlServer查询",
+    body: "",
+    keyword: "SqlServer Query",
+    reward: 50,
+    needRemote: true,
+    help: "飞哥"
+}
