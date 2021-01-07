@@ -1,4 +1,10 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿
+alert("好好学习，天天向上");
 
-// Write your Javascript code.
+var sname;
+sname = "zdh";
+alert(sname);
+sname = "lw";
+alert(sname);
+sname = "lzb";
+alert(sname);
