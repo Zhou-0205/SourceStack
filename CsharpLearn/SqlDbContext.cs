@@ -46,7 +46,7 @@ namespace CsharpLearn
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<User>()
-                .HasOne<Email>(u => u.Email)
+                .HasOne<Email>(u => u.Send)
                 .WithOne(e => e.Author)
                 .HasForeignKey<User>(u => u.Id);
 

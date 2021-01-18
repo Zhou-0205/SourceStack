@@ -10,5 +10,6 @@ namespace CsharpLearn
         public string Name { get; set; }
         public string Password { get; set; }
         public Email Send { get; set; }
+        public BangMoney Wallet { get; set; }
     }
 }
