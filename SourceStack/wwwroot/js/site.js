@@ -83,10 +83,10 @@
 //    temp;
 //for (var i = 0; i < arr.length; i++) {
 //    for (var j = 0; j < arr.length - 1; j++) {
-//        if (arr[i] > arr[i + 1]) {
+//        if (arr[i] > arr[j]) {
 //            temp = arr[i];
-//            arr[i] = arr[i + 1];
-//            arr[i + 1] = temp;
+//            arr[i] = arr[j];
+//            arr[j] = temp;
 //        }
 //    }
 //}
