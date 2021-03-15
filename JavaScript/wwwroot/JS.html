@@ -5,118 +5,74 @@
     <title></title>
     <script>
 
-        //构建一个函数has9(number) ，可以判断number中是否带有数字9；
-        //function has9(number) {
-        //    var regex = new RegExp("[9]");
-        //    return regex.test(number);
-        //}
-        //has9();
-
-        //构建一个函数has8(number) ，可以判断number中是否带有数字8；
-        //function has8(number) {
-        //    var regex = new RegExp("[8]");
-        //    return regex.test(number);
-        //}
-        //has8();
-
-        //构建一个函数has6(number) ，可以判断number中是否带有数字6；
-        //function has6(number) {
-        //    var regex = new RegExp("[6]");
-        //    return regex.test(number);
-        //}
-        //has6();
-
-        //让get986()通过调用has9() / has8() / has6() ，能找出number以内有多少个数字包含：9或者8或6
-        //var numbers = [343, 888, 657, 777, 365, 234, 798, 456, 987];
-        //var amount = 0;
-        //function get986() {
-        //    for (var i = 0; i < numbers.length; i++) {
-        //        if (has9(numbers[i]) || has8(numbers[i]) || has6(numbers[i])) {
-        //            amount++;
-        //        }//else nothing
-        //    }
-        //    console.log(amount);
-        //}
-        //get986();
-
-        //将之前“找出素数”的代码封装成一个函数findPrime(max) ，可以打印出max以内的所有素数。
-        //function findPrime(max) {
-        //    for (var i = 0; i < max.length; i++) {
-        //        for (var j = 0; j < i; j++) {
-        //            if (i % j == 0) {
-        //                break;
-        //            }
-        //            if (i - 1 == j) {
-        //                console.log(i);
-        //            }
-        //        }
-        //    }
-        //}
-
-        //自行设计参数，将之前“累加求和”的代码封装成一个函数Sum() ，可以计算任意起始位置、任意步长（如：1, 3, 5……或者0, 5, 10, 15……）的等差数列之和。
-        //function Sum(start, step) {
-        //    for (var i = start; i < 100; i += step) {
-        //        start += step;
-        //    }
-        //    console.log(start);
-        //}
-        //Sum(5, 5);
-
-        //封装一个函数，建立一个函数getMaxNumber() ，可以接受任意多各种类型的参数，并找出里面最大的数（忽略数值以外的其他类型）
-
-        //封装一个函数swap(arr, i, j) ，可以交换数组arr里下标 i 和 j 的值
-        //var arrary = [23, 34, 45, 56, 67, 78];
-        //function swap(arr, i, j) {
-        //    var temp;
-        //    temp = arrary[i];
-        //    arrary[i] = arrary[j];
-        //    arrary[j] = temp;
-        //}
-        //swap(arrary, 2, 4);
-
-        //利用上面的swap()函数，将“冒泡排序”封装成函数bubbleSort()
-
-        //封装函数deleteDuplicated()删除一个数组里面重复的元素
-        //var arr = [14, 25, 32, 45, 23, 56, 23];
-        //function deleteDuplicated(arr) {
-        //    var newarr = [];
-        //    for (var i = 0; i < arr.length; i++) {
-        //        if (newarr.indexOf(arr[i]) == -1) {
-        //            newarr.push(arr[i]);
-        //        }
-        //    }
-        //    return newarr;
-        //}
-        //deleteDuplicated(arr);
-
-        //不使用JavaScript内置函数将一个字符串顺序颠倒
-        //比如：'hello,yuanzhan' 变成 'nahznauy,olleh'
-        //var arr = 'hello,yuanzhan';
-        //var array = '';
-        //function perversion(arr) {
-        //    for (var i = arr.length - 1; i >= 0; i--) {
-        //        array += arr[i];
-        //    }
-        //    console.log(array);
-        //}
-        //perversion(arr);
-
-        //统计出这段文字中有多少个单词：
-        //var paragraph = "There are two ways to create a RegExp object: a literal notation and a constructor.To indicate stringsthe parameters to the literal notation do not use quotation marks while the parameters to the constructor function do use quotation - marks.So the following expressions create the same regular expression"
-        //var amount = 1;
-        //function myfunction(arr) {
-        //    for (var i = 0; i < arr.length; i++) {
-        //        if (arr[i] == ' ' || arr[i] == '.' || arr[i]==':') {
-        //            if ((arr[i - 1] >= 'a' && arr[i - 1] <= 'z') || (arr[i - 1] >= 'A' && arr[i - 1] <= 'Z')) {
-        //                amount++;
-        //            }
-        //        }
-        //    } console.log(amount);
-        //}
-        //myfunction(paragraph);
     </script>
 </head>
 <body>
+    <form>
+        <label>用户名：<input type="text" name="username" /></label><br />
+        <span style="display:none;">用户名重复</span>
+        <label>密码：<input type="password" name="password" /></label><br />
+        <span style="display:none;">密码不能少于四位</span>
+        <label>确认密码：<input type="password" name="confirmpassword" /></label><br />
+        <span style="display:none;">验证密码错误</span>
+        <div>
+            <label>性别：</label>
+            <label><input type="radio" value="female" name="gender" />男</label>
+            <label><input type="radio" value="male" name="gender" />女</label>
+        </div>
+        <div>
+            <label>来自：</label>
+            <select name="province">
+                <option value="js">江苏</option>
+                <option value="hn">湖南</option>
+                <option value="hlj">黑龙江</option>
+            </select>
+        </div>
+        <div>
+            <label>自我介绍：</label><br />
+            <textarea name="self-introduction"></textarea>
+        </div>
+        <input type="submit" value="提交" />
+        <input type="reset" value="重置" />
+        <label><input type="checkbox" id="remember" />记住我</label>
+    </form>
+    <input type="checkbox" name="check-all" />全选
+    <div>
+    <input type="checkbox" />壹
+    </div>
 
+    <hr />
+    <span data-toggle="tooltip" data-placement="top" title="使用10次">
+        关键字
+    </span>
+    <br />
+    <div id="1" style="height:200px;width:600px;">
+        <div>
+            <small>2018年07月02日 14点07分</small>
+            <a href="#">小王</a>
+        </div>
+        <div>
+            <span style="background-color:darkgrey;">协助中</span>
+            <a href="#" style="font-size:20px;">ASP网站迁移</a>
+        </div>
+        <p>在服务器上把原先的asp网站整体迁移出来，在新的服务器上重新布置<a href="#">......</a></p>
+        <div name="keyword">
+            <span style="background-color:darkgrey;">asp</span>
+            <span style="background-color:darkgrey;">数据库</span>
+        </div>
+        <br />
+        <div>
+            <span>悬赏：</span><span>20</span>
+            <a href="#">应答：</a><span>5</span>
+            <a href="#">总结：</a><span>0</span>
+        </div>
+        <hr />
+
+        <button id="previous">前一页</button>
+        <button id="next">下一页</button>
+        <a id="a" href="/JS.html">A标签</a>
+        <input id="text" type="text" />
+        <button id="goto">转到</button>
+    </div>
 </body>
 </html>
