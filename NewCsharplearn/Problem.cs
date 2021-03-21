@@ -8,11 +8,45 @@ namespace NewCsharplearn
     //悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish()
     public class Problem
     {
-        private static string title;
-        private static string body;
-        private static int reward;
-        private static DateTime publishDateTime;
-        private static User author;
+        //将之前的字段封装成属性，其中：
+        //problem.Reward不能为负数
+        //一起帮的求助可以有多个（最多10个）关键字，请为其设置索引器，
+        //以便于我们通过其整数下标进行读写
+        //每一个Problem对象一定有Body赋值
+        public Problem(string body)
+        {
+            this.body = body;
+        }
+
+        private string title;
+        private string body;
+        private int reward;
+        private DateTime publishDateTime;
+        private User author;
+        private string[] keywords = new string[10];
+
+        public string TItle { get; set; }
+        public string Body { get; set; }
+        public int Reward
+        {
+            get { return reward; }
+            set
+            {
+                if (reward < 0)
+                {
+                    Console.WriteLine("悬赏不能为负数");
+                    return;
+                };
+            }
+        }
+        public DateTime PublishDateTime { get; set; }
+        public User Author { get; set; }
+        public string this[int index]
+        {
+            get { return keywords[index - 1]; }
+            set { keywords[index - 1] = value; }
+        }
+
         public static void Publish() { }
     }
 }

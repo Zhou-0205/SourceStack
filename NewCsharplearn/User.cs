@@ -8,9 +8,39 @@ namespace NewCsharplearn
     //和 邀请人（InvitedBy），和方法：Register()、Login()
     public class User
     {
-        private static string name;
-        private static string password;
-        private static User invitedBy;
+        //将之前的字段封装成属性，其中：
+        //user.Password在类的外部只能改不能读
+        //如果user.Name为“admin”，输入时修改为“系统管理员”
+        //每一个User对象一定有Name和Password赋值
+
+        public User(string name, string password)
+        {
+            this.name = name;
+            this.password = password;
+        }
+
+        private string name;
+        private string password;
+        private User invitedBy;
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                if (value == "admin")
+                {
+                    name = "系统管理员";
+                }
+                else
+                {
+                    name = value;
+                };
+            }
+        }
+        public string Password { private get; set; }
+        public User InvitedBy { get; set; }
+
         public static void Register() { }
         public static void Login() { }
     }
