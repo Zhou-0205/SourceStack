@@ -164,12 +164,12 @@
 //sname = "lzb";
 //alert(sname);
 
-//var problem =
-//{
-//    title: "SqlServer查询",
-//    body: "",
-//    keyword: "SqlServer Query",
-//    reward: 50,
-//    needRemote: true,
-//    help: "飞哥"
-//}
+var problem =
+{
+    title: "SqlServer查询",
+    body: "",
+    keyword: ["SqlServer", "Query"],
+    reward: 50,
+    needRemote: true,
+    help: { id=1, name="飞哥" }
+}

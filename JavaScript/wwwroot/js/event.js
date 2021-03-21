@@ -6,7 +6,7 @@ document.getElementById("next").addEventListener('click', function () {
     history.forward();
 })
 //一个a标签，点击不会跳转到href指定页面，而是将href的值赋值给下面的一个文本框，
-document.getElementById("a").addEventListener('click', function () {
+document.getElementById("a").addEventListener('click', function (event) {
     event.preventDefault;
     document.getElementById("text").Value = this.href;
 })
@@ -16,8 +16,8 @@ document.getElementById("goto").addEventListener('click', function () {
 })
 
 //参考求助首页侧边栏关键字，实现：当鼠标移动到关键字上，显示关键字被使用次数
-document.getElementsByName("keyword")[0].firstElementChild.onmouseover = function () {
-
+document.getElementsByName("keyword")[0].children.onmouseover = function () {
+    this.setAttribute("title", "使用10次");
 }
 //参考一起帮首页，实现右侧漂浮并底对齐左侧文本框的效果
 //参考消息页面：完成勾选全选功能

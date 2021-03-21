@@ -16,10 +16,10 @@ if (confirm("确认开始吗")) {
             if (i < 6) {
                 alert("碉堡了！");
             }
-            if (i < 8) {
+            else if (i < 8) {
                 alert("666！");
             }
-            if (i < 10) {
+            else if(i < 10) {
                 alert("猜到了。");
             }
             break;

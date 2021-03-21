@@ -1,14 +1,14 @@
 ﻿//模拟求助首页，并：
 
 //统计有多少个悬赏大于1的求助
-//var count = 0;
-//var reword = document.getElementById(id);
-//for (var i = 0; i < reword.length; i++) {
-//    if (parseint(reword.innerText) > 1) {
-//        count++;
-//    }
-//    return count;
-//}
+var count = 0;
+var reword = document.getElementById("id");
+for (var i = 0; i < reword.length; i++) {
+    if (parseInt(reword.innerText) > 1) {
+        count++;
+    }
+    return count;
+}
 //将状态为“协助中”的求助背景改成灰黑色
 document.getElementsByTagName("div")[2].firstElementChild.setAttribute("style", "background-color:black");
 //如果总结数为0，将其从DOM树中删除
@@ -47,13 +47,14 @@ for (var i = 0; i < gender.length; i++) {
 var province = document.getElementsByName("province")[0].selectedOptions[0].innerText;
 console.log("省份" + province);
 var introduction = document.getElementsByName("self-introduction").innerText;
+console.log("自我介绍" + introduction);
 //实现铃铛（没有学bootstrap的同学用文字代替）闪烁效果
 setInterval(function () {
     var bell = document.getElementById('bell');
     if (bell.style.color !== 'blue') {
-        bell.setAttribute("style", "color:red");
+        bell.setAttribute("style", "color:blue");
     }
     else {
-        bell.setAttribute("style", "color:blue");
+        bell.setAttribute("style", "color:red");
     }
 }, 1000);
