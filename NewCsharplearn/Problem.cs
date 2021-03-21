@@ -8,11 +8,11 @@ namespace NewCsharplearn
     //悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish()
     public class Problem
     {
-        private static string Title;
-        private static string Body;
-        private static int Reward;
-        private static DateTime PublishDateTime;
-        private static User Author;
+        private static string title;
+        private static string body;
+        private static int reward;
+        private static DateTime publishDateTime;
+        private static User author;
         public static void Publish() { }
     }
 }

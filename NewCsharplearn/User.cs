@@ -8,9 +8,9 @@ namespace NewCsharplearn
     //和 邀请人（InvitedBy），和方法：Register()、Login()
     public class User
     {
-        private static string Name;
-        private static string Password;
-        private static User InvitedBy;
+        private static string name;
+        private static string password;
+        private static User invitedBy;
         public static void Register() { }
         public static void Login() { }
     }
