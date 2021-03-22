@@ -7,14 +7,14 @@ namespace NewCsharplearn
         static void Main(string[] args)
         {
             User zdh = new User("周丁浩", "123456");
-            User.Register();
-            User.Login();
+            zdh.Register();
+            zdh.Login();
 
             Problem first = new Problem("");
-            Problem.Publish();
+            first.Publish();
 
             HelpMoney add = new HelpMoney();
-            HelpMoney.Filtrate();
+            add.Filtrate();
         }
     }
 }

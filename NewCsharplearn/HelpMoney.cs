@@ -24,6 +24,6 @@ namespace NewCsharplearn
         public string Notes { get; set; }
         public User Owner { get; set; }
 
-        public static void Filtrate() { }
+        public void Filtrate() { }
     }
 }

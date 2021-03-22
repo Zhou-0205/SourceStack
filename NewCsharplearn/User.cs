@@ -41,7 +41,7 @@ namespace NewCsharplearn
         public string Password { private get; set; }
         public User InvitedBy { get; set; }
 
-        public static void Register() { }
-        public static void Login() { }
+        public void Register() { }
+        public void Login() { }
     }
 }
