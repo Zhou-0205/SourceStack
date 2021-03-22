@@ -6,7 +6,9 @@ namespace NewCsharplearn
 {
     //注册/登录功能，定义一个User类，包含字段：Name（用户名）、Password（密码）
     //和 邀请人（InvitedBy），和方法：Register()、Login()
-    public class User
+
+    //让User类无法被继承 sealed
+    public class User : Entity
     {
         //将之前的字段封装成属性，其中：
         //user.Password在类的外部只能改不能读
@@ -21,7 +23,7 @@ namespace NewCsharplearn
 
         private string name;
         private string password;
-        private User invitedBy;
+        //private User invitedBy;
 
         public string Name
         {

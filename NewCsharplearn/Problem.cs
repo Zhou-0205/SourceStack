@@ -6,27 +6,27 @@ namespace NewCsharplearn
 {
     //求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、
     //悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish()
-    public class Problem
+    public class Problem : Content
     {
         //将之前的字段封装成属性，其中：
         //problem.Reward不能为负数
         //一起帮的求助可以有多个（最多10个）关键字，请为其设置索引器，
         //以便于我们通过其整数下标进行读写
         //每一个Problem对象一定有Body赋值
-        public Problem(string body)
-        {
-            this.body = body;
-        }
+        //public Problem(string body)
+        //{
+        //    this.body = body;
+        //}
 
-        private string title;
-        private string body;
+        //private string title;
+        //private string body;
         private int reward;
-        private DateTime publishDateTime;
-        private User author;
+        //private DateTime publishDateTime;
+        //private User author;
         private string[] keywords = new string[10];
 
-        public string TItle { get; set; }
-        public string Body { get; set; }
+        //public string TItle { get; set; }
+        //public string Body { get; set; }
         public int Reward
         {
             get { return reward; }
@@ -39,8 +39,8 @@ namespace NewCsharplearn
                 };
             }
         }
-        public DateTime PublishDateTime { get; set; }
-        public User Author { get; set; }
+        //public DateTime PublishDateTime { get; set; }
+        //public User Author { get; set; }
         public string this[int index]
         {
             get { return keywords[index - 1]; }
@@ -54,7 +54,7 @@ namespace NewCsharplearn
         //repoistory：可用于在底层实现上述方法和数据库的连接操作等
         public Repoistory Repoistory { get; set; }
 
-        public void Publish() { }
+        //public void Publish() { }
         public static void Load(int id) { }
         public static void Dalete(int id) { }
     }
