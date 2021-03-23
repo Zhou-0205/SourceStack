@@ -4,10 +4,22 @@ using System.Text;
 
 namespace NewCsharplearn
 {
-    public class Suggest : Content
+    public class Suggest : Content, IParise
     {
-        public int Agree { get; set; }
-        public int DisAgree { get; set; }
+        public int Agreeamount { get; set; }
+        public int Disagreeamount { get; set; }
+        public void Agree(User voter)
+        {
+            voter.HelpPoint++;
+            Author.HelpPoint++;
+            Agreeamount++;
+        }
+        public void Disagree(User voter)
+        {
+            voter.HelpPoint--;
+            Author.HelpPoint--;
+            Disagreeamount--;
+        }
         public override void Publish()
         {
 

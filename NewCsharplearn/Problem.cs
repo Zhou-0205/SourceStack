@@ -6,7 +6,7 @@ namespace NewCsharplearn
 {
     //求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、
     //悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish()
-    public class Problem : Content
+    public class Problem : Content, IParise
     {
         //将之前的字段封装成属性，其中：
         //problem.Reward不能为负数
@@ -53,8 +53,20 @@ namespace NewCsharplearn
         //Delete(int id)：根据Id删除某个求助
         //repoistory：可用于在底层实现上述方法和数据库的连接操作等
         public Repoistory Repoistory { get; set; }
-
-        //public void Publish() { }
+        public int Agreeamount { get; set; }
+        public int Disagreeamount { get; set; }
+        public void Agree(User voter)
+        {
+            voter.HelpPoint++;
+            Author.HelpPoint++;
+            Agreeamount++;
+        }
+        public void Disagree(User voter)
+        {
+            voter.HelpPoint--;
+            Author.HelpPoint--;
+            Disagreeamount--;
+        }
         public static void Load(int id) { }
         public static void Dalete(int id) { }
 
