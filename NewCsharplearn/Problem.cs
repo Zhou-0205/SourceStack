@@ -57,5 +57,10 @@ namespace NewCsharplearn
         //public void Publish() { }
         public static void Load(int id) { }
         public static void Dalete(int id) { }
+
+        public override void Publish()
+        {
+            Author.HelpMoney -= reward;
+        }
     }
 }

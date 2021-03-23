@@ -8,5 +8,9 @@ namespace NewCsharplearn
     {
         public int Agree { get; set; }
         public int DisAgree { get; set; }
+        public override void Publish()
+        {
+
+        }
     }
 }

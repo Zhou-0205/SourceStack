@@ -25,6 +25,6 @@ namespace NewCsharplearn
         public string Comment { get; set; }
         public DateTime PublishTime { get { return creatTime; } }
 
-        public void Publish() { }
+        public virtual void Publish() { }
     }
 }
