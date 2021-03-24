@@ -28,16 +28,20 @@ namespace NewCsharplearn
             //problem.Publish();
 
             //多态
-            ContentService service = new ContentService();
+            //ContentService service = new ContentService();
 
-            Content content = new Article();
-            service.Publish(content);
+            //Content content = new Article();
+            //service.Publish(content);
 
-            content = new Problem();
-            service.Publish(content);
+            //content = new Problem();
+            //service.Publish(content);
 
-            content = new Suggest();
-            service.Publish(content);
+            //content = new Suggest();
+            //service.Publish(content);
+
+            //DateTimed调用
+            //Console.WriteLine(GetDate(new DateTime(2020, 10, 10), 10, Kind.day));
+            //Computingtime.GetWeeks(Computingtime.GetFirstMondy(2021));
         }
     }
 }
