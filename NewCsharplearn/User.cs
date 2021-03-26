@@ -15,35 +15,37 @@ namespace NewCsharplearn
         //如果user.Name为“admin”，输入时修改为“系统管理员”
         //每一个User对象一定有Name和Password赋值
 
-        public User(string name, string password)
-        {
-            this.name = name;
-            this.password = password;
-        }
+        //public User(string name, string password)
+        //{
+        //    this.name = name;
+        //    this.password = password;
+        //}
 
-        private string name;
-        private string password;
+        //private string name;
+        //private string password;
         //private User invitedBy;
 
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                if (value == "admin")
-                {
-                    name = "系统管理员";
-                }
-                else
-                {
-                    name = value;
-                };
-            }
-        }
+        //public string Name
+        //{
+        //    get { return name; }
+        //    set
+        //    {
+        //        if (value == "admin")
+        //        {
+        //            name = "系统管理员";
+        //        }
+        //        else
+        //        {
+        //            name = value;
+        //        };
+        //    }
+        //}
+        public string Name { get; set; }
         public string Password { private get; set; }
         public User InvitedBy { get; set; }
         public int HelpMoney { get; set; }
         public int HelpPoint { get; set; }
+        public TokenManager Tokens { get; set; }
 
         public void Register() { }
         public void Login() { }

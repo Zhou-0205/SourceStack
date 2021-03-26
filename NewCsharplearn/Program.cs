@@ -42,6 +42,14 @@ namespace NewCsharplearn
             //DateTimed调用
             //Console.WriteLine(GetDate(new DateTime(2020, 10, 10), 10, Kind.day));
             //Computingtime.GetWeeks(Computingtime.GetFirstMondy(2021));
+
+            User z = new User
+            {
+                Tokens = new TokenManager()
+            };
+            z.Tokens.Add(Token.Admin);
+            z.Tokens.Remove(Token.Admin);
+            z.Tokens.Has(Token.Admin);
         }
     }
 }
