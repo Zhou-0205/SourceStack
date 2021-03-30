@@ -6,6 +6,6 @@ namespace NewCsharplearn
 {
     interface ISendMessage
     {
-        void send();
+        public void send();
     }
 }

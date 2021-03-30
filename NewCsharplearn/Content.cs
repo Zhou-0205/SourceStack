@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Reflection;
 
 namespace NewCsharplearn
 {
@@ -14,19 +15,20 @@ namespace NewCsharplearn
     //Content类，该将其抽象成抽象类还是接口
     public abstract class Content : Entity
     {
-        //public Content(string kind)
+        //CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
+        //想一想他们应该在哪里赋值比较好，并完成相应代码
+        //public Content(DateTime publishtime,DateTime createtime)
         //{
-        //    this.kind = kind;
+        //    this.PublishTime = publishtime;
+        //    this.CreateTime = createtime;
         //}
-        //protected string kind;
-        private DateTime creatTime;
         public string Kind { get; set; }
         public string Title { get; set; }
         public string Body { get; set; }
         public User Author { get; set; }
         public string Comment { get; set; }
-        public DateTime PublishTime { get { return creatTime; } }
-
+        public DateTime PublishTime { get; private set; }
+        public DateTime CreateTime { get; private set; }
         public virtual void Publish() { }
     }
 }

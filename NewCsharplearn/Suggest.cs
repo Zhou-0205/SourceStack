@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NewCsharplearn
 {
-    public class Suggest : Content, IParise
+    public class Suggest : Content, IPraise
     {
         public int Agreeamount { get; set; }
         public int Disagreeamount { get; set; }

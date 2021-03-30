@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NewCsharplearn
 {
-    public class Article : Content, IParise
+    public class Article : Content, IPraise
     {
         public string KeyWords { get; set; }
         public int Agreeamount { get; set; }
@@ -21,6 +21,7 @@ namespace NewCsharplearn
             Author.HelpPoint--;
             Disagreeamount--;
         }
+        [HelpMoneyChanged]
         public override void Publish()
         {
             Author.HelpMoney--;

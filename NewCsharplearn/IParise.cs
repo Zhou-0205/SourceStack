@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NewCsharplearn
 {
-    interface IParise
+    interface IPraise
     {
         public int Agreeamount { get; set; }
         public int Disagreeamount { get; set; }

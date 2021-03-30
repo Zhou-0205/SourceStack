@@ -11,7 +11,7 @@ namespace NewCsharplearn
 
         //private DateTime time;
         //private int usable;
-        //private int freeza;
+        //private int freeze;
         //private string kind;
         //private int change;
         //private string notes;
@@ -19,11 +19,24 @@ namespace NewCsharplearn
 
         public DateTime Time { get; set; }
         public int Usable { get; set; }
-        public int Freeza { get; set; }
-        public string KInd { get; set; }
+        public int Freeze { get; set; }
+        public Variety Kind { get; set; }
+        public int Change { get; set; }
         public string Notes { get; set; }
         public User Owner { get; set; }
 
-        public void Filtrate() { }
+        public static void Filtrate() { }
+    }
+    public enum Variety
+    {
+        Drop = 1,               //掉落
+        Deal = 2,               //交易
+        SeekHelp = 4,           //求助
+        Advertising = 8,        //广告
+        OnLoan = 16,            //借贷
+        OnlyaReward = 32,       //打赏
+        Urge = 64,              //督促
+        PublishArticle = 128,   //文章发布
+        Activity = 256          //活动
     }
 }

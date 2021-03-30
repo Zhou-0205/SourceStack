@@ -6,7 +6,7 @@ namespace NewCsharplearn
 {
     //求助版块，定义一个类Problem，包含字段：标题（Title）、正文（Body）、
     //悬赏（Reward）、发布时间（PublishDateTime）和作者（Author），和方法Publish()
-    public class Problem : Content, IParise
+    public class Problem : Content, IPraise
     {
         //将之前的字段封装成属性，其中：
         //problem.Reward不能为负数

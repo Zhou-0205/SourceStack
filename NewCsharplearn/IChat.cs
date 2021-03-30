@@ -6,6 +6,6 @@ namespace NewCsharplearn
 {
     interface IChat
     {
-        void send();
+        public void send();
     }
 }
