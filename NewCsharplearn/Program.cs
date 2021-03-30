@@ -64,6 +64,19 @@ namespace NewCsharplearn
             //AlterCreateTime(article, new DateTime(2021, 3, 30));
             //AlterPublishTime(article, DateTime.Now);
 
+            //构造一个能装任何数据的数组，并完成数据的读写
+            object[] array = new object[10];
+
+            array[0] = 1;
+
+            array[1] = "字符";
+
+            array[2] = 2;
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+
         }
         //修改Content的CreateTime和PublishTime
         public static void AlterCreateTime(Content content, DateTime datetime)

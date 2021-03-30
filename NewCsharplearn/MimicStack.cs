@@ -12,16 +12,17 @@ namespace NewCsharplearn
     //    如果压入的数据已超过栈的深度（最大容量），提示“栈溢出”
     //    如果已弹出所有数据，提示“栈已空”
 
+    //使用object改造数据结构栈
     public class MimicStack
     {
-        private int[] container;
+        private object[] container;
         private int top = 0;
         private const int bottom = 0;
         public MimicStack(int length)
         {
-            container = new int[length];
+            container = new object[length];
         }
-        public void Push(int element)
+        public void Push(object element)
         {
             if (top <= container.Length - 1)
             {
@@ -33,14 +34,14 @@ namespace NewCsharplearn
                 Console.WriteLine("栈溢出");
             }
         }
-        public void Push(int[] array)
+        public void Push(object[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
                 Push(array[i]);
             }
         }
-        public int Pop()
+        public object Pop()
         {
             if (top >= bottom)
             {
