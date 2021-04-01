@@ -34,9 +34,12 @@ namespace NewCsharplearn
             {
                 if (reward < 0)
                 {
-                    Console.WriteLine("悬赏不能为负数");
                     return;
-                };
+                }
+                else
+                {
+                    reward = value;
+                }
             }
         }
         //public DateTime PublishDateTime { get; set; }

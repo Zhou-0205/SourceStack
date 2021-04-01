@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Reflection;
+using System.Text;
 
 namespace NewCsharplearn
 {
@@ -65,17 +66,33 @@ namespace NewCsharplearn
             //AlterPublishTime(article, DateTime.Now);
 
             //构造一个能装任何数据的数组，并完成数据的读写
-            object[] array = new object[10];
+            //object[] array = new object[10];
 
-            array[0] = 1;
+            //array[0] = 1;
 
-            array[1] = "字符";
+            //array[1] = "字符";
 
-            array[2] = 2;
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
+            //array[2] = 2;
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    Console.WriteLine(array[i]);
+            //}
+
+            //string a = "12121";
+            //string b = "121";
+            //Console.WriteLine(GetCount(a, b));
+            //string[] array = { "a", "b", "c", "d" };
+            //Console.WriteLine(MimicJoin("~", array));
+
+            //User zdh = new User();
+            //zdh.Name = "17bang";
+            //zdh.Password = "12345";
+            //Console.WriteLine(zdh.Name);
+            //Console.WriteLine(zdh.Password);
+
+            //Article article = new Article();
+            //article.Title = "";
+            //Console.WriteLine(article.Title);
 
         }
         //修改Content的CreateTime和PublishTime
@@ -90,6 +107,50 @@ namespace NewCsharplearn
             typeof(Content)
                 .GetProperty(nameof(content.PublishTime), BindingFlags.NonPublic | BindingFlags.Instance)
                 .SetValue(content, datetime);
+        }
+        //实现GetCount(string container, string target)方法，可以统计出container中有多少个target
+        public static int GetCount(string container, string target)
+        {
+            int result = 0;
+            char[] contains = container.ToCharArray();
+
+            for (int i = 0; i < contains.Length; i++)
+            {
+                if (contains[i] == target[0])
+                {
+                    if ((i + target.Length) > contains.Length)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        if (container.Substring(i, target.Length) == target)
+                        {
+                            result += 1;
+                        }//else
+                    }
+                }//else
+            }
+            //while (container.Contains(target))
+            //{
+            //    container = container.Substring(container.IndexOf(target) + target.Length);
+            //    result += 1;
+            //}
+            return result;
+        }
+        //不使用string自带的Join()方法，定义一个mimicJoin()方法，能将若干字符串用指定的分隔符连接起来，比如：mimicJoin("-","a","b","c","d")，其运行结果为：a-b-c-d
+        public static string MimicJoin(string separator, string[] value)
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < value.Length; i++)
+            {
+                sb = sb.Append(value[i]);
+                if (i != value.Length - 1)
+                {
+                    sb.Append(separator);
+                }//else
+            }
+            return sb.ToString();
         }
     }
 }

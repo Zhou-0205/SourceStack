@@ -22,13 +22,21 @@ namespace NewCsharplearn
         //    this.PublishTime = publishtime;
         //    this.CreateTime = createtime;
         //}
-        public string Kind { get; set; }
-        public string Title { get; set; }
+
+        public virtual string Title { get; set; }
+        protected ContentVariety Kind { get; set; }
         public string Body { get; set; }
         public User Author { get; set; }
         public string Comment { get; set; }
         public DateTime PublishTime { get; private set; }
         public DateTime CreateTime { get; private set; }
         public virtual void Publish() { }
+
+    }
+    public enum ContentVariety
+    {
+        suggest = 0,
+        problem = 1,
+        article = 2
     }
 }

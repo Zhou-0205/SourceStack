@@ -4,44 +4,49 @@ using System.Text;
 
 namespace NewCsharplearn
 {
-    //注册/登录功能，定义一个User类，包含字段：Name（用户名）、Password（密码）
-    //和 邀请人（InvitedBy），和方法：Register()、Login()
-
-    //让User类无法被继承 sealed
     public class User : Entity, ISendMessage, IChat
     {
-        //将之前的字段封装成属性，其中：
-        //user.Password在类的外部只能改不能读
-        //如果user.Name为“admin”，输入时修改为“系统管理员”
-        //每一个User对象一定有Name和Password赋值
+        //设计一个适用的机制，能确保用户（User）的昵称（Name）不能含有admin、17bang、管理员等敏感词。
 
-        //public User(string name, string password)
-        //{
-        //    this.name = name;
-        //    this.password = password;
-        //}
-
-        //private string name;
-        //private string password;
-        //private User invitedBy;
-
-        //public string Name
-        //{
-        //    get { return name; }
-        //    set
-        //    {
-        //        if (value == "admin")
-        //        {
-        //            name = "系统管理员";
-        //        }
-        //        else
-        //        {
-        //            name = value;
-        //        };
-        //    }
-        //}
-        public string Name { get; set; }
-        public string Password { private get; set; }
+        //确保用户（User）的密码（Password）：
+        //长度不低于6
+        //必须由大小写英语单词、数字和特殊符号（~!@#$%^&*()_+）组成
+        private string _name;
+        private string _password;
+        public string Name
+        {
+            get { return _name; }
+            set
+            {
+                if (value.Contains("admin") || value.Contains("17bang") || value.Contains("管理员"))
+                {
+                    Console.WriteLine("输入词有敏感信息");
+                    return;
+                }
+                else
+                {
+                    _name = value;
+                }
+            }
+        }
+        public string Password
+        {
+            get { return _password; }
+            set
+            {
+                if (value.Length < 6)
+                {
+                    Console.WriteLine("密码不符合长度");
+                    return;
+                }//else
+                if (!PasswordIsTrue(value))
+                {
+                    Console.WriteLine("密码必须由大小写英语单词、数字和特殊符号（~!@#$%^&*()_+）组成");
+                    return;
+                }//else
+                _password = value;
+            }
+        }
         public User InvitedBy { get; set; }
         public int HelpMoney { get; set; }
         public int HelpPoint { get; set; }
@@ -53,5 +58,26 @@ namespace NewCsharplearn
         //假设User类同时继承了ISendMessage和IChat，如何处理？
         void ISendMessage.send() { }
         void IChat.send() { }
+
+        public bool PasswordCheck(string password, string check)
+        {
+            char[] temp = password.ToCharArray();
+            for (int i = 0; i < temp.Length; i++)
+            {
+                if (check.Contains(temp[i]))
+                {
+                    return true;
+                }//else
+            }
+            return false;
+        }
+        public bool PasswordIsTrue(string password)
+        {
+            return
+                (PasswordCheck(password, "0123456789")
+                && PasswordCheck(password, "abcdefghijklmnopqrstuvwxyz")
+                && PasswordCheck(password, "ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+                && PasswordCheck(password, "~!@#$%^&*()_+"));
+        }
     }
 }
