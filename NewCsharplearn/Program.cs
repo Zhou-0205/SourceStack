@@ -78,9 +78,9 @@ namespace NewCsharplearn
             //    Console.WriteLine(array[i]);
             //}
 
-            //string a = "12121";
-            //string b = "121";
-            //Console.WriteLine(GetCount(a, b));
+            string a = "12121";
+            string b = "121";
+            Console.WriteLine(GetCount(a, b));
             //string[] array = { "a", "b", "c", "d" };
             //Console.WriteLine(MimicJoin("~", array));
 
@@ -112,13 +112,13 @@ namespace NewCsharplearn
         public static int GetCount(string container, string target)
         {
             int result = 0;
-            char[] contains = container.ToCharArray();
+            //char[] contains = container.ToCharArray();
 
-            for (int i = 0; i < contains.Length; i++)
+            for (int i = 0; i < container.Length; i++)
             {
-                if (contains[i] == target[0])
+                if (container[i] == target[0])
                 {
-                    if ((i + target.Length) > contains.Length)
+                    if ((i + target.Length) > container.Length)
                     {
                         break;
                     }
