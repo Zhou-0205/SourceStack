@@ -4,12 +4,13 @@ using System.Text;
 
 namespace NewCsharplearn
 {
-    public class DoubleLinked
+    //泛型改造双向链表
+    public class DoubleLinked<T>
     {
-        public DoubleLinked Previous { get; set; }
-        public DoubleLinked Next { get; set; }
+        public DoubleLinked<T> Previous { get; set; }
+        public DoubleLinked<T> Next { get; set; }
         public int Value { get; set; }
-        public void InsertAfter(DoubleLinked node)
+        public void InsertAfter(DoubleLinked<T> node)
         {
             if (this.Next == null)
             {
@@ -23,7 +24,7 @@ namespace NewCsharplearn
             this.Next = node;
             node.Previous = this;
         }
-        public void InsertBefore(DoubleLinked node)
+        public void InsertBefore(DoubleLinked<T> node)
         {
             if (this.Previous == null)
             {
@@ -57,30 +58,30 @@ namespace NewCsharplearn
                 this.Previous = null;
             }
         }
-        public void Swap(DoubleLinked node)
+        public void Swap(DoubleLinked<T> node)
         {
-            DoubleLinked preThis = this.Previous;
-            DoubleLinked nextThis = this.Next;
+            DoubleLinked<T> preThis = this.Previous;
+            DoubleLinked<T> nextThis = this.Next;
             if (node.Next != this)
             {
                 this.Delete();
                 node.InsertAfter(this);
-            }
-            if (nextThis==node)
+            }//else
+            if (nextThis == node)
             {
                 nextThis = this;
-            }
+            }//else
             if (preThis == node)
             {
                 preThis = this;
-            }
+            }//else
             if (preThis == null)
             {
                 if (node.Next != nextThis)
                 {
                     node.Delete();
                     nextThis.InsertBefore(node);
-                }
+                }//else
             }
             else
             {
@@ -88,7 +89,7 @@ namespace NewCsharplearn
                 {
                     node.Delete();
                     preThis.InsertAfter(node);
-                }
+                }//else
             }
         }
     }

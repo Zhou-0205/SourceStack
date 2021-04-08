@@ -13,16 +13,18 @@ namespace NewCsharplearn
     //    如果已弹出所有数据，提示“栈已空”
 
     //使用object改造数据结构栈
-    public class MimicStack
+
+    //使用泛型改造栈
+    public class MimicStack<T>
     {
-        private object[] container;
+        private T[] container;
         private int top = 0;
         private const int bottom = 0;
         public MimicStack(int length)
         {
-            container = new object[length];
+            container = new T[length];
         }
-        public void Push(object element)
+        public void Push(T element)
         {
             if (top <= container.Length - 1)
             {
@@ -34,14 +36,14 @@ namespace NewCsharplearn
                 Console.WriteLine("栈溢出");
             }
         }
-        public void Push(object[] array)
+        public void Push(T[] array)
         {
             for (int i = 0; i < array.Length; i++)
             {
                 Push(array[i]);
             }
         }
-        public object Pop()
+        public T Pop()
         {
             if (top >= bottom)
             {
@@ -51,7 +53,7 @@ namespace NewCsharplearn
             else
             {
                 Console.WriteLine("栈已空");
-                return -1;
+                return default;
             }
         }
     }

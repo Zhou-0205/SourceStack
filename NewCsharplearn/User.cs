@@ -4,7 +4,7 @@ using System.Text;
 
 namespace NewCsharplearn
 {
-    public class User : Entity, ISendMessage, IChat
+    public class User : Entity<int>, ISendMessage, IChat
     {
         //设计一个适用的机制，能确保用户（User）的昵称（Name）不能含有admin、17bang、管理员等敏感词。
 

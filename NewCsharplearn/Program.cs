@@ -78,9 +78,9 @@ namespace NewCsharplearn
             //    Console.WriteLine(array[i]);
             //}
 
-            string a = "12121";
-            string b = "121";
-            Console.WriteLine(GetCount(a, b));
+            //string a = "12121";
+            //string b = "121";
+            //Console.WriteLine(GetCount(a, b));
             //string[] array = { "a", "b", "c", "d" };
             //Console.WriteLine(MimicJoin("~", array));
 
@@ -94,6 +94,47 @@ namespace NewCsharplearn
             //article.Title = "";
             //Console.WriteLine(article.Title);
 
+            int[] arr = { 1, 2, 3, 4, 5 };
+            //Console.WriteLine(GetMax<int>(arr));
+
+            Console.WriteLine(BinarySearch<int>(arr, 2));
+        }
+        //泛型改造二分
+        public static int BinarySearch<T>(T[] array, T target) where T : IComparable
+        {
+            int left = 0;
+            int right = array.Length - 1;
+            int middle;
+            while (left <= right)
+            {
+                middle = (left + right) / 2;
+                if (target.CompareTo(array[middle]) > 0)
+                {
+                    left = middle + 1;
+                }
+                else if (target.CompareTo(array[middle]) < 0)
+                {
+                    right = middle - 1;
+                }
+                else
+                {
+                    return middle;
+                }
+            }
+            return -1;
+        }
+        //泛型改造取数组最大值
+        public static T GetMax<T>(T[] array) where T : IComparable
+        {
+            T max = default;
+            for (int i = 0; i < array.Length; i++)
+            {
+                if (array[i].CompareTo(max) > 0)
+                {
+                    max = array[i];
+                }//else
+            }
+            return max;
         }
         //修改Content的CreateTime和PublishTime
         public static void AlterCreateTime(Content content, DateTime datetime)

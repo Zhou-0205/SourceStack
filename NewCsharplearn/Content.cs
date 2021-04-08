@@ -13,7 +13,7 @@ namespace NewCsharplearn
     //其他方法和属性请自行考虑，尽量贴近一起帮的功能实现
 
     //Content类，该将其抽象成抽象类还是接口
-    public abstract class Content : Entity
+    public abstract class Content : Entity<int>
     {
         //CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
         //想一想他们应该在哪里赋值比较好，并完成相应代码

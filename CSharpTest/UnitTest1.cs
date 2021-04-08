@@ -5,15 +5,15 @@ namespace CSharpTest
 {
     public class Tests
     {
-        DoubleLinked node1, node2, node3, node4, node5;
+        DoubleLinked<string> node1, node2, node3, node4, node5;
         [SetUp]
         public void Setup()
         {
-            node1 = new DoubleLinked() { Value = 1 };
-            node2 = new DoubleLinked() { Value = 2 };
-            node3 = new DoubleLinked() { Value = 3 };
-            node4 = new DoubleLinked() { Value = 4 };
-            node5 = new DoubleLinked() { Value = 5 };
+            node1 = new DoubleLinked<string>() { Value = 1 };
+            node2 = new DoubleLinked<string>() { Value = 2 };
+            node3 = new DoubleLinked<string>() { Value = 3 };
+            node4 = new DoubleLinked<string>() { Value = 4 };
+            node5 = new DoubleLinked<string>() { Value = 5 };
 
             node1.Next = node2;
             node2.Next = node3;
@@ -31,7 +31,7 @@ namespace CSharpTest
         public void InsertAfterTest()
         {
             //1 2 3 [6] 4 5
-            DoubleLinked node6 = new DoubleLinked();
+            DoubleLinked<string> node6 = new DoubleLinked<string>();
             node3.InsertAfter(node6);
 
             Assert.AreEqual(node6, node3.Next);
@@ -43,7 +43,7 @@ namespace CSharpTest
         public void InsertAfterTailTest()
         {
             //1 2 3 4 5 [6]
-            DoubleLinked node6 = new DoubleLinked();
+            DoubleLinked<string> node6 = new DoubleLinked<string>();
             node5.InsertAfter(node6);
 
             Assert.AreEqual(node6, node5.Next);
@@ -54,7 +54,7 @@ namespace CSharpTest
         public void InsertBeforeTest()
         {
             //1 2 3 [6] 4 5
-            DoubleLinked node6 = new DoubleLinked();
+            DoubleLinked<string> node6 = new DoubleLinked<string>();
             node4.InsertBefore(node6);
 
             Assert.AreEqual(node6, node4.Previous);
@@ -66,7 +66,7 @@ namespace CSharpTest
         public void InsertBeforeHeadTest()
         {
             //[6] 1 2 3 4 5
-            DoubleLinked node6 = new DoubleLinked();
+            DoubleLinked<string> node6 = new DoubleLinked<string>();
             node1.InsertBefore(node6);
 
             Assert.AreEqual(node6, node1.Previous);
@@ -143,9 +143,9 @@ namespace CSharpTest
             //  [1] [2] 3 4 5
             //=>[2] [1] 3 4 5
             node1.Swap(node2);
-
-            Assert.AreEqual(1, node2.Next.Value);
+            
             Assert.IsNull(node2.Previous);
+            Assert.AreEqual(1, node2.Next.Value); 
             Assert.AreEqual(2, node1.Previous.Value);
             Assert.AreEqual(3, node1.Next.Value);
             Assert.AreEqual(1, node3.Previous.Value);
