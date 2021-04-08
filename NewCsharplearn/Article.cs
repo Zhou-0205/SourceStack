@@ -25,7 +25,9 @@ namespace NewCsharplearn
                 }
             }
         }
-        public string KeyWords { get; set; }
+        public IList<Keyword> KeyWords { get; set; }
+        public IList<Comment<Article>> Comments { get; set; }
+        public Appraise<Article> Appraise { get; set; }
         public int Agreeamount { get; set; }
         public int Disagreeamount { get; set; }
         public void Agree(User voter)
