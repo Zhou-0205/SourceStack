@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using System.Text;
 
@@ -98,27 +100,37 @@ namespace NewCsharplearn
             //Console.WriteLine(GetMax<int>(arr));
             //Console.WriteLine(BinarySearch<int>(arr, 2));
 
-            DoubleLinked<string> node1, node2, node3, node4, node5;
+            //DoubleLinked<string> node1, node2, node3, node4, node5;
 
-            node1 = new DoubleLinked<string>() { Value = 1 };
-            node2 = new DoubleLinked<string>() { Value = 2 };
-            node3 = new DoubleLinked<string>() { Value = 3 };
-            node4 = new DoubleLinked<string>() { Value = 4 };
-            node5 = new DoubleLinked<string>() { Value = 5 };
+            //node1 = new DoubleLinked<string>() { Value = 1 };
+            //node2 = new DoubleLinked<string>() { Value = 2 };
+            //node3 = new DoubleLinked<string>() { Value = 3 };
+            //node4 = new DoubleLinked<string>() { Value = 4 };
+            //node5 = new DoubleLinked<string>() { Value = 5 };
 
-            node1.Next = node2;
-            node2.Next = node3;
-            node3.Next = node4;
-            node4.Next = node5;
-            node5.Next = null;
+            //node1.Next = node2;
+            //node2.Next = node3;
+            //node3.Next = node4;
+            //node4.Next = node5;
+            //node5.Next = null;
 
-            node5.Previous = node4;
-            node4.Previous = node3;
-            node3.Previous = node2;
-            node2.Previous = node1;
-            node1.Previous = null;
-   
-            Console.WriteLine(node1.GetMax());
+            //node5.Previous = node4;
+            //node4.Previous = node3;
+            //node3.Previous = node2;
+            //node2.Previous = node1;
+            //node1.Previous = null;
+
+            //Console.WriteLine(node1.GetMax());
+
+            //int[] nodes=new int[5];
+            //int index = 0;
+            //foreach (var item in node1)
+            //{
+            //    nodes[index]=item.Value;
+            //    index++;
+            //}
+            //Console.WriteLine(nodes.Max());
+
         }
         //泛型改造二分
         public static int BinarySearch<T>(T[] array, T target) where T : IComparable
