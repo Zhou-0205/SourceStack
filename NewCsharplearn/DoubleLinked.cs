@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
 namespace NewCsharplearn
 {
     //泛型改造双向链表
-    public class DoubleLinked<T>
+    public class DoubleLinked<T> : IEnumerable<DoubleLinked<T>>
     {
         public DoubleLinked<T> Previous { get; set; }
         public DoubleLinked<T> Next { get; set; }
@@ -92,5 +93,68 @@ namespace NewCsharplearn
                 }//else
             }
         }
+        private DoubleLinked<T> getHead()
+        {
+            DoubleLinked<T> head = this;
+            if (head.Previous != null)
+            {
+                head = head.Previous;
+            }
+            return head;
+        }
+
+        public IEnumerator<DoubleLinked<T>> GetEnumerator()
+        {
+            return new Enumerator(this);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        struct Enumerator : IEnumerator<DoubleLinked<T>>
+        {
+            private DoubleLinked<T> _current;
+            private bool end;
+            private DoubleLinked<T> _head;
+            public object Current => _current.Previous;
+            DoubleLinked<T> IEnumerator<DoubleLinked<T>>.Current => _current.Previous;
+            public Enumerator(DoubleLinked<T> node)
+            {
+                _current = node;
+                end = false;
+                _head = _current.getHead();
+            }
+
+            public void Dispose()
+            {
+                return;
+            }
+
+            public bool MoveNext()
+            {
+                if (end)
+                {
+                    return false;
+                }//else
+                if (_current.Next == null)
+                {
+                    _current.Next = new DoubleLinked<T>
+                    {
+                        Previous = _current
+                    };
+                    end = true;
+                }//else
+                _current = _current.Next;
+
+                return true;
+            }
+            public void Reset()
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
+  
 }

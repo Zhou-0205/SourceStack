@@ -1,5 +1,6 @@
 using NewCsharplearn;
 using NUnit.Framework;
+using System.Collections.Generic;
 
 namespace CSharpTest
 {
@@ -143,9 +144,9 @@ namespace CSharpTest
             //  [1] [2] 3 4 5
             //=>[2] [1] 3 4 5
             node1.Swap(node2);
-            
+
             Assert.IsNull(node2.Previous);
-            Assert.AreEqual(1, node2.Next.Value); 
+            Assert.AreEqual(1, node2.Next.Value);
             Assert.AreEqual(2, node1.Previous.Value);
             Assert.AreEqual(3, node1.Next.Value);
             Assert.AreEqual(1, node3.Previous.Value);
@@ -424,6 +425,23 @@ namespace CSharpTest
             Assert.AreEqual(node3, node5.Previous);
             Assert.AreEqual(node4, node5.Next);
             Assert.AreEqual(node5, node3.Next);
+        }
+        [Test]
+        public void ForeachTest()
+        {
+            IList<DoubleLinked<string>> nodes = new List<DoubleLinked<string>>();
+            foreach (var item in node1)
+            {
+                nodes.Add(item);
+            }
+            //12345
+            Assert.AreEqual(nodes.Count,5);
+
+            Assert.AreEqual(node1.Value, nodes[0].Value);
+            Assert.AreEqual(node2.Value, nodes[1].Value);
+            Assert.AreEqual(node3.Value, nodes[2].Value);
+            Assert.AreEqual(node4.Value, nodes[3].Value);
+            Assert.AreEqual(node5.Value, nodes[4].Value);
         }
     }
 }
