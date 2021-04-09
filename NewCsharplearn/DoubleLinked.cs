@@ -156,5 +156,20 @@ namespace NewCsharplearn
             }
         }
     }
-  
+    public static class DoubleLinkedExtesion
+    {
+        public static int GetMax(this DoubleLinked<string> node)
+        {
+            int max = 0;
+
+            foreach (var item in node)
+            {
+                if (item.Value > max)
+                {
+                    max = item.Value;
+                }
+            }
+            return max;
+        }
+    }
 }
