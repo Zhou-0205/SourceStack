@@ -17,10 +17,10 @@ namespace NewCsharplearn
     {
         //CreateTime（创建时间）和PublishTime（发布时间）都是只读的属性，
         //想一想他们应该在哪里赋值比较好，并完成相应代码
-        //public Content(DateTime publishtime,DateTime createtime)
+        //public Content()
         //{
-        //    this.PublishTime = publishtime;
-        //    this.CreateTime = createtime;
+        //    this.PublishTime = DateTime.Now;
+        //    this.CreateTime = DateTime.Now;
         //}
 
         public virtual string Title { get; set; }
@@ -28,8 +28,8 @@ namespace NewCsharplearn
         public string Body { get; set; }
         public User Author { get; set; }
         public string Comment { get; set; }
-        public DateTime PublishTime { get; private set; }
-        public DateTime CreateTime { get; private set; }
+        public DateTime PublishTime { get; set; }
+        public DateTime CreateTime { get; set; }
         public virtual void Publish() { }
 
     }

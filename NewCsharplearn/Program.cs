@@ -131,6 +131,106 @@ namespace NewCsharplearn
             //}
             //Console.WriteLine(nodes.Max());
 
+            User fg = new User { Name = "飞哥" };
+            User xy = new User { Name = "小鱼" };
+            Keyword k1 = new Keyword { Name = "SQL" };
+            Keyword k2 = new Keyword { Name = "C#" };
+            Keyword k3 = new Keyword { Name = ".NET" };
+            IList<Article> articles = new List<Article>()
+            {
+                new Article()
+                {
+                    Title = "飞哥1",
+                    Author = fg,
+                    PublishTime = new DateTime(2020 / 02 / 05),
+                    KeyWords = new List<Keyword>() { k1 },
+                    Comments = new List<Comment<Article>>() { new Comment<Article> { }, new Comment<Article> { } }
+                },
+                new Article()
+                {
+                    Title = "飞哥2",
+                    Author = fg,
+                    PublishTime = new DateTime(2018 / 07 / 07),
+                    KeyWords = new List<Keyword>() { k2 },
+                    Comments = new List<Comment<Article>>() { new Comment<Article> { } }
+                },
+                new Article()
+                {
+                    Title = "小鱼1",
+                    Author = xy,
+                    PublishTime = new DateTime(2018 / 01 / 01),
+                    KeyWords = new List<Keyword>() { k3 },
+                    Comments = new List<Comment<Article>>() { new Comment<Article> { }, new Comment<Article> { } }
+                },
+                new Article()
+                {
+                    Title = "小鱼2",
+                    Author = xy,
+                    PublishTime = new DateTime(2020 / 01 / 01),
+                    KeyWords = new List<Keyword>() { k2,k3 },
+                    Comments = new List<Comment<Article>>() { new Comment<Article> { } }
+                }
+            };
+            //找出“飞哥”发布的文章
+            //var result = from a in articles
+            //        where a.Author.Name == "飞哥"
+            //        select a;
+            //找出2019年1月1日以后“小鱼”发布的文章
+            //var result = from a in articles
+            //        where a.PublishTime > new DateTime(2019 / 01 / 01) && a.Author.Name == "小鱼"
+            //        select a;
+            //按发布时间升序 / 降序排列显示文章
+            //var result = from a in articles
+            //        orderby a.PublishTime ascending
+            //        select a;
+            //var result = from a in articles
+            //        orderby a.PublishTime descending
+            //        select a;
+            //统计每个用户各发布了多少篇文章
+            //var result = from a in articles
+            //        group a by a.Author;
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.Key.Name);
+            //    Console.WriteLine(item.Count());
+            //    foreach (var i in item)
+            //    {
+            //        Console.WriteLine(i.Title);
+            //    }
+            //}
+            //找出包含关键字“C#”或“.NET”的文章
+            //var result = from a in articles
+            //             where a.KeyWords.Any(k => k.Name == "C#" || k.Name == ".NET")
+            //             select a;
+            //找出评论数量最多的文章
+            //var result = from a in articles
+            //        orderby a.Comments.Count descending
+            //        select a;
+            //result.First();
+            //找出每个作者评论数最多的文章
+            //var result = from a in articles
+            //             group a by a.Author into am
+            //             select am.OrderByDescending(am => am?.Comments.FirstOrDefault());
+            //找出每个作者最近发布的一篇文章
+            //var result = from a in articles
+            //             group a by a.Author into ab
+            //             select ab.OrderByDescending(ab => ab.PublishTime);
+            IList<Problem> problems = new List<Problem>()
+            {
+                new Problem(){Title="p1", Reward=10, Author=fg},
+                new Problem(){Title="p2", Reward=5, Author=fg},
+                new Problem(){Title="p3", Reward=10, Author=xy},
+                new Problem(){Title="p4", Reward=5, Author=xy},
+            };
+            //为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的求助作者
+            //var result = from p in problems
+            //             where p.Reward > 5
+            //             select p;
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item.Author.Name);
+            //    Console.WriteLine(item.Title);
+            //}
         }
         //泛型改造二分
         public static int BinarySearch<T>(T[] array, T target) where T : IComparable
