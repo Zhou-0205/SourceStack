@@ -27,6 +27,7 @@ namespace NewCsharplearn
 
         //public string TItle { get; set; }
         //public string Body { get; set; }
+        //修改之前的属性验证：problem.Reward为负数时直接抛出“参数越界”异常
         public int Reward
         {
             get { return reward; }
@@ -34,7 +35,7 @@ namespace NewCsharplearn
             {
                 if (reward < 0)
                 {
-                    return;
+                    throw new ArgumentOutOfRangeException("悬赏不能为负");
                 }
                 else
                 {

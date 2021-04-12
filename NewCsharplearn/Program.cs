@@ -223,13 +223,23 @@ namespace NewCsharplearn
                 new Problem(){Title="p4", Reward=5, Author=xy},
             };
             //为求助（Problem）添加悬赏（Reward）属性，并找出每一篇求助的悬赏都大于5个帮帮币的求助作者
-            var result = from a in problems
-                         group a by a.Author into ac
-                         where ac.All(ac => ac.Reward > 5)
-                         select ac.Key.Name;
-            foreach (var item in result)
+            //var result = from a in problems
+            //             group a by a.Author into ac
+            //             where ac.All(ac => ac.Reward > 5)
+            //             select ac.Key.Name;
+            //foreach (var item in result)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            //Main()函数调用ContentService时，捕获一切异常，并记录异常的消息和堆栈信息
+            try
             {
-                Console.WriteLine(item);
+                ContentService contentService = new ContentService();
+                contentService.Publish(new Article());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString() + DateTime.Now);
             }
         }
         //泛型改造二分

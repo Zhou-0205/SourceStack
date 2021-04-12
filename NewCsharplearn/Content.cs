@@ -30,13 +30,19 @@ namespace NewCsharplearn
         public string Comment { get; set; }
         public DateTime PublishTime { get; set; }
         public DateTime CreateTime { get; set; }
-        public virtual void Publish() { }
-
+        //内容（Content）发布（Publish）的时候检查其作者（Author）是否为空，如果为空抛出“参数为空”异常
+        public virtual void Publish()
+        {
+            if (this.Author == null)
+            {
+                throw new ArgumentNullException("作者不能为空");
+            }
+        }
     }
     public enum ContentVariety
     {
-        suggest = 0,
-        problem = 1,
-        article = 2
+        suggest,
+        problem,
+        article
     }
 }
