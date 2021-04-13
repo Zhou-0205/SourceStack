@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScript", "JavaScript\Ja
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewCsharplearn", "NewCsharplearn\NewCsharplearn.csproj", "{D6522D55-D985-4EC7-A7DF-495B47BE55D2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSharpTest", "CSharpTest\CSharpTest.csproj", "{A9484A00-6780-43A8-8BB8-0D42B9A5AA16}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CSharpTest", "CSharpTest\CSharpTest.csproj", "{A9484A00-6780-43A8-8BB8-0D42B9A5AA16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Captcha", "Captcha\Captcha.csproj", "{20773AD2-B152-499F-B154-63E538A3A603}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{A9484A00-6780-43A8-8BB8-0D42B9A5AA16}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9484A00-6780-43A8-8BB8-0D42B9A5AA16}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9484A00-6780-43A8-8BB8-0D42B9A5AA16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20773AD2-B152-499F-B154-63E538A3A603}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20773AD2-B152-499F-B154-63E538A3A603}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20773AD2-B152-499F-B154-63E538A3A603}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20773AD2-B152-499F-B154-63E538A3A603}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
