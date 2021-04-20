@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - RazorPage</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <style>
+        .foot {
+            width: 1200px;
+            height: 150px;
+            clear: both;
+            padding-left: 100px;
+            padding-top: 20px;
+        }
+        .put {
+            height: 80px;
+            line-height: 80px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <ul class="nav justify-content-end fixed-top" style="border-color:gainsboro;background-color:white;">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">求助</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">督导班</a>
+                    <a class="dropdown-item" href="#">列表</a>
+                    <a class="dropdown-item" href="#">疑问发布</a>
+                    <a class="dropdown-item" href="#">疑问列表</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">列表</a>
+                    <a class="dropdown-item" href="#">发布</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">督促</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">求督促</a>
+                    <a class="dropdown-item" href="#">督促别人</a>
+                    <a class="dropdown-item" href="#">我的目标</a>
+                    <a class="dropdown-item" href="#">我的督促</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">文章</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/Article/Index">列表</a>
+                    <a class="dropdown-item" href="#">开通</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">未登录</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/Register/logIn">登录</a>
+                    <a class="dropdown-item" href="/Register/SignUp">注册</a>
+                    <a class="dropdown-item" href="#">忘记密码</a>
+                </div>
+            </li>
+        </ul>
+    </header>
+    <hr />
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="foot">
+            <a href="#">关于我们</a>&nbsp;|
+            <a href="#">常见问题</a>&nbsp;|
+            <a href="#">意见建议</a>&nbsp;|
+            <a href="#">历史通知</a>&nbsp;|
+            <a href="#" style="color:darkseagreen">友情捐赠</a>&nbsp;|
+            <a href="#">诚邀合伙人</a><br />
+            友情链接：
+            <div class="put">
+                <a href="#">渝ICP备18007191号（备案）</a>©2020-首顾科技
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>

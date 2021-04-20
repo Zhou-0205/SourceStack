@@ -36,12 +36,12 @@ namespace Captcha
                     );
             }
 
-            string character = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            string str = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
             StringBuilder stringBuilder = new StringBuilder();
             for (int i = 0; i < 4; i++)
             {
-                int index = random.Next(character.Length);
-                stringBuilder.Append(character[index]);
+                int index = random.Next(str.Length);
+                stringBuilder.Append(str[index]);
             }
             string cartcha = stringBuilder.ToString();
             graphics.DrawString(

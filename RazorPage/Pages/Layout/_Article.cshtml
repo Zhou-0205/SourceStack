@@ -1,0 +1,71 @@
+﻿@{
+    Layout = "_Layout";
+}
+<div class="container" style="margin-top:20px">
+    <div class="row" style="margin-top:40px">
+        <div class="col-8">
+            @RenderBody()
+        </div>
+        <div class="col-4">
+            @RenderSection("list")
+            <h4>关键字</h4>
+            <hr />
+            <div style="margin-top:20px">
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:20px;margin-right:15px">编程开发语言</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:20px;margin-right:15px">C#</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:20px;margin-right:15px">JAVA</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:19px;margin-right:15px">工具软件</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:19px;margin-right:15px">Javascript</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:18px;margin-right:15px">顾问咨询</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:18px;margin-right:15px">HTML</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:18px;margin-right:15px">VisualStudio</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:17px;margin-right:15px">操作系统</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:17px;margin-right:15px">SQl</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:17px;margin-right:15px">职场</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:17px;margin-right:15px">法律</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:16px;margin-right:15px">Python</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:16px;margin-right:15px">.Net</a>
+                <a href="#" class="badge badge-pill badge-dark" style="font-size:16px;margin-right:15px">css</a>
+            </div>
+            <hr />
+            <nav class="navbar navbar-light bg-light" style="margin-top:10px">
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="输入关键字" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
+            <hr />
+            <nav style="margin-top:20px">
+                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">每日督促</a>
+                    <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">排行榜</a>
+                    <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">新注册</a>
+                </div>
+            </nav>
+            <div class="tab-content" id="nav-tabContent">
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                    <ul style="list-style-type:none;">
+                        <li style="font-size:20px;">2020年12月1日</li>
+                        <li><strong>共扫描目标:</strong></li>
+                        <li><strong>当天休息:</strong></li>
+                        <li><strong>已交作业:</strong></li>
+                        <li><strong>请假:</strong></li>
+                        <li><strong>未交作业:</strong></li>
+                    </ul>
+                </div>
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+            </div>
+            <hr />
+            <ol style="margin-top:100px">
+                <li><a href="#">学编程，来 “源栈”！飞哥精品小班等着你……</a></li>
+                <li><a href="#"> 免费广告位，抢到就是赚到！</a></li>
+                <li><a href="#"> 免费广告位，抢到就是赚到！</a></li>
+                <li><a href="#"> 免费广告位，抢到就是赚到！</a></li>
+                <li><a href="#"> 免费广告位，抢到就是赚到！</a></li>
+                <li>本站主机由<a href="#">西部数码</a>提供 </li>
+            </ol>
+        </div>
+    </div>
+    <hr />
+</div>

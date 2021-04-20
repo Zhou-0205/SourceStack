@@ -1,0 +1,67 @@
+﻿@page
+@model RazorPage.Pages.Article.SingleModel
+@{
+    ViewData["Title"] = "文章单页";
+    Layout = "Layout/_Single";
+}
+<div>
+    <h2 style="color:dodgerblue">@Model.Articles.Title</h2>
+    <hr />
+    <div style="margin-bottom:10px">
+        <small>@Model.Articles.PublishTime.ToString("yyyy年MM月 dd日hh点mm分")</small>
+        <p style="float:right">作者：<a href="#">@Model.Articles.Author.Name</a></p>
+    </div>
+    <p>@Model.Articles.Body</p>
+    <div>
+        <strong>关键字：</strong>
+        @for (int i = 0; i < Model.Articles.Keywords.Count; i++)
+        {
+            <span class="badge badge-pill badge-dark">@Model.Articles.Keywords[i].Name</span>
+        }
+    </div>
+    <div style="margin-top:20px;">
+        <div>已收到打赏的<a>帮帮币</a></div>
+        <hr />
+        <div>
+            你的<span style="color:yellow">打赏</span>非常重要!<br />
+            为了保证文章的质量，每一篇文章的发布，都已经消耗了作者 1 枚 帮帮币 。<br />
+            没有“帮帮币”，作者无法发布新的文章。
+        </div>
+    </div>
+    <div style="background-color:lightyellow;margin-top:20px;">
+        <a href="#">投稿人推广：</a><a href="#"> 学编程，来 “源栈”！飞哥精品小班等着你……</a>
+    </div>
+    <div style="margin-top:20px;">
+        <input type="submit" value="提交" class="btn btn-primary">
+        <input type="reset" value="重置" class="btn btn-light">
+    </div>
+    <div style="margin-top:30px">
+        <input type="checkbox" />在系列<a href="#">Java vs C#</a>中的
+        <div style="border:1px dashed;border-radius:5px;">
+            上一篇：
+            @if (Model.Previous != null)
+            {
+                <a href="@Model.Previous.Id">@Model.Previous.Title</a>
+            }
+            else
+            {
+                <a>已经是第一篇了</a>
+            }
+            <br />
+            下一篇：
+            @if (Model.Next != null)
+            {
+                <a href="@Model.Next.Id">@Model.Next.Title</a>
+            }
+            else
+            {
+                <a>已经是最后一篇了</a>
+            }
+        </div>
+    </div>
+    <hr />
+</div>
+@section single
+{
+
+}
