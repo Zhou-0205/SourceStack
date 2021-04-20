@@ -17,11 +17,22 @@ namespace RazorPage.Repositories
                 new User{Id=2,Name="李四"},
                 new User{Id=3,Name="王五"},
                 new User{Id=4,Name="赵六"},
+                new User{Id=5,Name="田七",InvitedCode="1234"},
             };
         }
         public User Find(int id)
         {
-            return users.Where(a => a.Id == id).SingleOrDefault();
+            return users.Where(u => u.Id == id).SingleOrDefault();
+        }
+
+        internal void Save(User newUser)
+        {
+            users.Add(newUser);
+        }
+
+        internal User GetByName(string name)
+        {
+            return users.Where(u => u.Name == name).SingleOrDefault();
         }
     }
 }
