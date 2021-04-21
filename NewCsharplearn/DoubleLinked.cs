@@ -158,15 +158,15 @@ namespace NewCsharplearn
     }
     public static class DoubleLinkedExtesion
     {
-        public static int GetMax(this DoubleLinked<string> node)
+        public static DoubleLinked<string> GetMax(this DoubleLinked<string> node)
         {
-            int max = 0;
+            DoubleLinked<string> max = null;
 
             foreach (var item in node)
             {
-                if (item.Value > max)
+                if (item.Value > max.Value)
                 {
-                    max = item.Value;
+                    max = item;
                 }
             }
             return max;

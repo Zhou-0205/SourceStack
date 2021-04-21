@@ -142,7 +142,7 @@ namespace NewCsharplearn
                 {
                     Title = "飞哥1",
                     Author = fg,
-                    PublishTime = new DateTime(2020 / 02 / 05),
+                    PublishTime = new DateTime(2020,02,05),
                     KeyWords = new List<Keyword>() { k1 },
                     Comments = new List<Comment<Article>>() { new Comment<Article> { }, new Comment<Article> { } }
                 },
@@ -150,7 +150,7 @@ namespace NewCsharplearn
                 {
                     Title = "飞哥2",
                     Author = fg,
-                    PublishTime = new DateTime(2018 / 07 / 07),
+                    PublishTime = new DateTime(2018,07,07),
                     KeyWords = new List<Keyword>() { k2 },
                     Comments = new List<Comment<Article>>() { new Comment<Article> { } }
                 },
@@ -158,7 +158,7 @@ namespace NewCsharplearn
                 {
                     Title = "小鱼1",
                     Author = xy,
-                    PublishTime = new DateTime(2018 / 01 / 01),
+                    PublishTime = new DateTime(2018,01,01),
                     KeyWords = new List<Keyword>() { k3 },
                     Comments = new List<Comment<Article>>() { new Comment<Article> { }, new Comment<Article> { } }
                 },
@@ -166,7 +166,7 @@ namespace NewCsharplearn
                 {
                     Title = "小鱼2",
                     Author = xy,
-                    PublishTime = new DateTime(2020 / 01 / 01),
+                    PublishTime = new DateTime(2020,01,01),
                     KeyWords = new List<Keyword>() { k2,k3 },
                     Comments = new List<Comment<Article>>() { new Comment<Article> { } }
                 }
@@ -210,11 +210,11 @@ namespace NewCsharplearn
             //找出每个作者评论数最多的文章
             //var result = from a in articles
             //             group a by a.Author into am
-            //             select am.OrderByDescending(am => am?.Comments.FirstOrDefault());
+            //             select am.OrderByDescending(am => am?.Comments?.Count).FirstOrDefault();
             //找出每个作者最近发布的一篇文章
             //var result = from a in articles
-            //             group a by a.Author into ab
-            //             select ab.OrderByDescending(ab => ab.PublishTime);
+            //              group a by a.Author into ab
+            //              select ab.OrderByDescending(ab => ab.PublishTime).FirstOrDefault();
             IList<Problem> problems = new List<Problem>()
             {
                 new Problem(){Title="p1", Reward=10, Author=fg},
@@ -233,15 +233,15 @@ namespace NewCsharplearn
             //}
 
             //Main()函数调用ContentService时，捕获一切异常，并记录异常的消息和堆栈信息
-            try
-            {
-                ContentService contentService = new ContentService();
-                contentService.Publish(new Article());
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString() + DateTime.Now);
-            }
+            //try
+            //{
+            //    ContentService contentService = new ContentService();
+            //    contentService.Publish(new Problem { Author = new User { Name = "" }, Reward = -1 });
+            //}
+            //catch (Exception e)
+            //{
+            //    Console.WriteLine(e.ToString() + DateTime.Now);
+            //}
         }
         //泛型改造二分
         public static int BinarySearch<T>(T[] array, T target) where T : IComparable

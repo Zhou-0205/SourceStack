@@ -45,7 +45,7 @@ namespace NewCsharplearn
         [HelpMoneyChanged]
         public override void Publish()
         {
-            Author.HelpMoney--;
+            //Author.HelpMoney--;
         }
     }
 }
