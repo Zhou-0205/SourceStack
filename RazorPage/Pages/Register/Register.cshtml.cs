@@ -10,10 +10,10 @@ using RazorPage.Repositories;
 namespace RazorPage.Pages.Register
 {
     [BindProperties]
-    public class LogOnModel : PageModel
+    public class RegisterModel : PageModel
     {
         private UserRepository userRepository;
-        public LogOnModel()
+        public RegisterModel()
         {
             userRepository = new UserRepository();
         }
