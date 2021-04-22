@@ -24,10 +24,15 @@ namespace RazorPage.Pages.Register
         {
         }
         public void OnPost()
-        { 
+        {
+            if (!ModelState.IsValid)
+            {
+                return;
+            }
             if (ConfirmPassword != NewUser.Password)
             {
                 ModelState.AddModelError("ConfirmPassword", "两次输入密码不一致");
+                return;
             }
 
             User invitedBy = userRepository.GetByName(NewUser.InvitedBy.Name);
@@ -35,15 +40,14 @@ namespace RazorPage.Pages.Register
             if (invitedBy == null)
             {
                 ModelState.AddModelError("NewUser.InvitedBy.Name", "邀请人不存在");
+                return;
             }
             if (invitedBy.InvitedCode != NewUser.InvitedBy.InvitedCode)
             {
                 ModelState.AddModelError("NewUser.InvitedBy.InvitedCode", "邀请码错误");
-            }
-            if (!ModelState.IsValid)
-            {
                 return;
             }
+
             NewUser.InvitedBy = invitedBy;
             NewUser.Register();
             userRepository.Save(NewUser);

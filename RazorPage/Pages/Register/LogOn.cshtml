@@ -1,0 +1,28 @@
+﻿@page
+@model RazorPage.Pages.Register.LogOnModel
+@{
+    Layout = "Layout/_Register";
+    ViewData["Title"] = "登录";
+}
+<form method="post" asp-page="Register/LogOn">
+    <div>
+        <label>用户名：(*必填)</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label>密码：(*必填)</label>
+        <input asp-for="Password" class="form-control" />
+        <span asp-validation-for="Password"></span>
+    </div>
+    <div style="margin-top:20px;">
+        <input type="submit" value="登录" class="btn btn-primary">
+        <label style="margin-left:50px;">
+            <input asp-for="RememberMe" checked class="form-check-inline">记住我
+        </label>
+
+    </div>
+</form>
+@section Register
+{
+}
