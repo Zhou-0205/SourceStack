@@ -25,27 +25,51 @@ namespace RazorPage.Pages.Register
         public string Password { get; set; }
         public bool RememberMe { get; set; }
         public void OnGet()
-        {
-            ViewData["HasLogon"] = Request.Cookies[Keys.UserId];
-        }
-        public void OnPost()
-        {
-            if (!ModelState.IsValid)
+        {   
+            ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            Dictionary<string, string> errors = TempData[Keys.ErrorInfo] as Dictionary<string, string>;
+            if (errors != null)
             {
-                return;
+                foreach (var item in errors)
+                {
+                    ModelState.AddModelError(item.Key, item.Value);
+                }
             }
+        }
+        public IActionResult OnPost()
+        {
+            //if (!ModelState.IsValid)
+            //{
+            //    return;
+            //}
 
             User user = userRepository.GetByName(Name);
 
             if (user == null)
             {
                 ModelState.AddModelError(nameof(Name), "* 用户名不存在");
-                return;
+                Dictionary<string, string> errors =
+                    ModelState.Where(m => m.Value.Errors.Any())
+                        .ToDictionary(
+                            m => m.Key,
+                            m => m.Value.Errors
+                                .Select(s => s.ErrorMessage)
+                                .FirstOrDefault(s => s != null));
+                TempData[Keys.ErrorInfo] = errors;
+                return RedirectToPage();
             }
             if (user.Password != Password)
             {
                 ModelState.AddModelError(nameof(Password), "* 用户名或密码错误");
-                return;
+                Dictionary<string, string> errors =
+                   ModelState.Where(m => m.Value.Errors.Any())
+                       .ToDictionary(
+                           m => m.Key,
+                           m => m.Value.Errors
+                               .Select(s => s.ErrorMessage)
+                               .FirstOrDefault(s => s != null));
+                TempData[Keys.ErrorInfo] = errors;
+                return RedirectToPage();
             }
 
             CookieOptions cookieOptions = new CookieOptions();
@@ -54,7 +78,15 @@ namespace RazorPage.Pages.Register
                 cookieOptions.Expires = DateTime.Now.AddDays(14);
             }//else expires=session
 
-            Response.Cookies.Append(Keys.UserId, user.Id.ToString(), cookieOptions);
+            Response.Cookies.Append(Keys.UserName, user.Name.ToString(), cookieOptions);
+
+            string path = Request.Query["prepage"].ToString();
+            if (path!=null)
+            {
+                return Redirect(path);
+            }
+            return RedirectToPage();
+
         }
     }
 }

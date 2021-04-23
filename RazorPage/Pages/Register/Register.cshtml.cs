@@ -22,6 +22,7 @@ namespace RazorPage.Pages.Register
 
         public void OnGet()
         {
+            ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
         }
         public void OnPost()
         {
@@ -51,6 +52,8 @@ namespace RazorPage.Pages.Register
             NewUser.InvitedBy = invitedBy;
             NewUser.Register();
             userRepository.Save(NewUser);
+
+
         }
     }
 }

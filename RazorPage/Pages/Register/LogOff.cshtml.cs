@@ -9,9 +9,12 @@ namespace RazorPage.Pages.Register
 {
     public class LogOffModel : PageModel
     {
-        public void OnGet()
+        public IActionResult OnGet()
         {
-            Response.Cookies.Delete(Keys.UserId);
+            Response.Cookies.Delete(Keys.UserName);
+            //return RedirectToPage("LogOn");
+            
+            return Redirect(Request.Headers["referer"]);
         }
     }
 }

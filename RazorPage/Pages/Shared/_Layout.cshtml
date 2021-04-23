@@ -26,6 +26,12 @@
     <header>
         <ul class="nav justify-content-end fixed-top" style="border-color:gainsboro;background-color:white;">
             <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">消息</a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item" href="/Register/Message">我的消息</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">求助</a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="#">督导班</a>
@@ -58,14 +64,22 @@
                 {
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">未登录</a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="/Register/LogOn">登录</a>
+                        @if (@Context.Request.Path.Value == "/Register/LogOn")
+                        {
+                            <a class="dropdown-item" href="/Register/LogOn">登录</a>
+                        }
+                        else
+                        {
+                            <a class="dropdown-item" href="/Register/LogOn?prepage=@Context.Request.Path.Value">登录</a>
+                        }
+
                         <a class="dropdown-item" href="/Register/Register">注册</a>
                         <a class="dropdown-item" href="#">忘记密码</a>
                     </div>
                 }
                 else
                 {
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">已登录</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@ViewData["HasLogon"]</a>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="/Register/LogOff">退出登录</a>
                     </div>
