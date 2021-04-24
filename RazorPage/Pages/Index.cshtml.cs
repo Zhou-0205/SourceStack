@@ -19,7 +19,8 @@ namespace RazorPage.Pages
 
         public void OnGet()
         {
-
+            ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            ViewData["UserId"] = Request.Cookies[Keys.UserId];
         }
     }
 }

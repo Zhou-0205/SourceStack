@@ -28,6 +28,7 @@ namespace RazorPage.Pages.Article
             PageCount = articleRepository.ArticleCount() / pageSize;
             Articles = articleRepository.Get(PageIndex, pageSize);
             ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            ViewData["UserId"] = Request.Cookies[Keys.UserId];
             //if (string.IsNullOrEmpty(Request.Cookies[Keys.UserName]))
             //{
             //    return RedirectToPage("/Register/LogOn");

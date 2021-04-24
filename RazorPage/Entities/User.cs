@@ -17,7 +17,7 @@ namespace RazorPage.Entities
         [StringLength(4, MinimumLength = 4, ErrorMessage = "* 长度只能为4位")]
         public string InvitedCode { get; set; }
         public int BMoney { get; set; }
-
+        public int Level { get; set; }
         public void Register()
         {
             InvitedBy.BMoney += 10;

@@ -1,0 +1,15 @@
+﻿@page
+@model RazorPage.Pages.User.UserInfoModel
+@{
+    ViewData["Title"] = "用户列表";
+}
+
+@*<partial name="_User" model="@Model.Users" />*@
+<div>
+    Id:<p>@Model.Users.Id</p>
+    Name:<p>@Model.Users.Name</p>
+    Level:<p>@Model.Users.Level</p>
+</div>
+
+
+

@@ -9,7 +9,8 @@
     <hr />
     <div style="margin-bottom:10px">
         <small>@Model.Articles.PublishTime.ToString("yyyy年MM月 dd日hh点mm分")</small>
-        <p style="float:right">作者：<a href="#">@Model.Articles.Author.Name</a></p>
+        @*<p style="float:right">作者：<a href="#">@Model.Articles.Author.Name</a></p>*@
+        <p style="float:right">作者:<partial name="_User" model="@Model.Articles.Author" /></p>
     </div>
     <p>@Model.Articles.Body</p>
     <div>

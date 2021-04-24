@@ -1,0 +1,26 @@
+﻿@model RazorPage.Entities.User
+@{
+}
+
+@*新建一个Partial view：_User.cshtml，
+    _User.cshtml对应着一个UserPageModel，
+    UserPageModel中有Id、Name和Level属性，供_User.cshtml
+    _User.cshtml里是一个链接：
+        文本为UserPageModel的Name
+        链接指向：/User/@Id
+        根据Level显示不同的颜色：3级以下灰色；3-8级蓝色；8级以上红色
+        在其他页面（比如：/Problem）上使用_User.cshtml（如：显示求助的作者）*@
+
+@if (Model.Level < 3)
+{
+    <a style="color:darkgrey" href="@Model.Id">@Model.Name</a>
+}
+else if (Model.Level <= 8)
+{
+    <a style="color:lightskyblue" href="@Model.Id">@Model.Name</a>
+}
+else
+{
+    <a style="color:orangered" href="@Model.Id">@Model.Name</a>
+}
+

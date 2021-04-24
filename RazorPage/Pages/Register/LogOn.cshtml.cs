@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorPage.Entities;
+using E=RazorPage.Entities;
 using RazorPage.Filter;
 using RazorPage.Repositories;
 
@@ -29,6 +29,7 @@ namespace RazorPage.Pages.Register
         public void OnGet()
         {
             ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            ViewData["UserId"] = Request.Cookies[Keys.UserId];
         }
         public IActionResult OnPost()
         {
@@ -37,7 +38,7 @@ namespace RazorPage.Pages.Register
             //    return;
             //}
 
-            User user = userRepository.GetByName(Name);
+            E.User user = userRepository.GetByName(Name);
 
             if (user == null)
             {
@@ -56,15 +57,15 @@ namespace RazorPage.Pages.Register
                 cookieOptions.Expires = DateTime.Now.AddDays(14);
             }//else expires=session
 
+            Response.Cookies.Append(Keys.UserId, user.Id.ToString(), cookieOptions);
             Response.Cookies.Append(Keys.UserName, user.Name.ToString(), cookieOptions);
 
             string path = Request.Query["prepage"].ToString();
-            if (path != null)
+            if (!string.IsNullOrEmpty(path))
             {
                 return Redirect(path);
             }
-            return RedirectToPage();
-
+            return Redirect("/Article/Index");
         }
     }
 }

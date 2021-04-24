@@ -12,8 +12,9 @@ namespace RazorPage.Pages.Register
         public IActionResult OnGet()
         {
             Response.Cookies.Delete(Keys.UserName);
+            Response.Cookies.Delete(Keys.UserId);
             //return RedirectToPage("LogOn");
-            
+
             return Redirect(Request.Headers["referer"]);
         }
     }

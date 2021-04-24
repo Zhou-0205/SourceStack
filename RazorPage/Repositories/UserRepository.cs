@@ -13,16 +13,22 @@ namespace RazorPage.Repositories
         {
             users = new List<User>
             {
-                new User{Id=1,Name="张三",Password="1234"},
-                new User{Id=2,Name="李四",Password="1234"},
-                new User{Id=3,Name="王五",Password="1234"},
-                new User{Id=4,Name="赵六",Password="1234"},
+                new User{Id=1,Name="张三",Password="1234",Level=1},
+                new User{Id=2,Name="李四",Password="1234",Level=5},
+                new User{Id=3,Name="王五",Password="1234",Level=7},
+                new User{Id=4,Name="赵六",Password="1234",Level=9},
                 new User{Id=5,Name="田七",Password="1234",InvitedCode="1234"},
             };
         }
+
         public User Find(int id)
         {
             return users.Where(u => u.Id == id).SingleOrDefault();
+        }
+
+        internal IList<User> Get()
+        {
+            return users;
         }
 
         internal void Save(User newUser)

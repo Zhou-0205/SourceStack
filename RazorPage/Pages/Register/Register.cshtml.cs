@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using RazorPage.Entities;
+using E=RazorPage.Entities;
 using RazorPage.Repositories;
 
 namespace RazorPage.Pages.Register
@@ -17,12 +17,13 @@ namespace RazorPage.Pages.Register
         {
             userRepository = new UserRepository();
         }
-        public User NewUser { get; set; }
+        public E.User NewUser { get; set; }
         public string ConfirmPassword { get; set; }
 
         public void OnGet()
         {
             ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            ViewData["UserId"] = Request.Cookies[Keys.UserId];
         }
         public void OnPost()
         {
@@ -36,7 +37,7 @@ namespace RazorPage.Pages.Register
                 return;
             }
 
-            User invitedBy = userRepository.GetByName(NewUser.InvitedBy.Name);
+            E.User invitedBy = userRepository.GetByName(NewUser.InvitedBy.Name);
 
             if (invitedBy == null)
             {

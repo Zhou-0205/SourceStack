@@ -28,6 +28,7 @@ namespace RazorPage
                 {
                     opt.Conventions.AddPageRoute("/Article/Index", "/Article/Page-{id:int}");
                     opt.Conventions.AddPageRoute("/Article/Single", "/Article/{id:int}");
+                    opt.Conventions.AddPageRoute("/User/UserInfo", "/User/{id:int}");
                 });
         }
 

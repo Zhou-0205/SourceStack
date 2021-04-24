@@ -27,6 +27,7 @@ namespace RazorPage.Pages.Article
             Previous = singleRepository.Find(id - 1);
             Next = singleRepository.Find(id + 1);
             ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            ViewData["UserId"] = Request.Cookies[Keys.UserId];
         }
     }
 }

@@ -14,6 +14,7 @@ namespace RazorPage.Pages.Register
         public IActionResult OnGet()
         {
             ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            ViewData["UserId"] = Request.Cookies[Keys.UserId];
             //if (string.IsNullOrEmpty(Request.Cookies[Keys.UserName]))
             //{
             //    return RedirectToPage("LogOn");
