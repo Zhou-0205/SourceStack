@@ -28,15 +28,6 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">我的</a>
                 <div class="dropdown-menu">
-                    @if (ViewData["UserId"] != null)
-                    {
-                        <a class="dropdown-item" href="/User/@ViewData["UserId"]">我的信息</a>
-
-                    }
-                    else
-                    {
-                        <a class="dropdown-item" href="/User/UserInfo">我的信息</a>
-                    }
                     <a class="dropdown-item" href="/Register/Message">我的消息</a>
                 </div>
             </li>
@@ -69,7 +60,7 @@
                 </div>
             </li>
             <li class="nav-item dropdown">
-                @if (ViewData["HasLogon"] == null)
+                @if (ViewData["UserId"] == null)
                 {
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">未登录</a>
                     <div class="dropdown-menu">
@@ -88,8 +79,9 @@
                 }
                 else
                 {
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@ViewData["HasLogon"]</a>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">@ViewData["UserName"]</a>
                     <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/User/@ViewData["UserId"]">我的信息</a>
                         <a class="dropdown-item" href="/Register/LogOff">退出登录</a>
                     </div>
                 }

@@ -14,9 +14,10 @@ namespace RazorPage.Filter
         {
             HttpContext httpContext = context.HttpContext;
 
-            if (string.IsNullOrEmpty(httpContext.Request.Cookies[Keys.UserName]))
+            if (string.IsNullOrEmpty(httpContext.Session.GetString(Keys.UserId)))
             {
-                context.Result = new RedirectToPageResult("LogOn");
+                string url = httpContext.Request.Path.Value;
+                context.Result = new RedirectResult("/Register/LogOn?prepage="+url);
             }
         }
     }

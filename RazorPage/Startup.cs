@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,7 +24,17 @@ namespace RazorPage
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages()
+            services
+                .AddSession(opt =>
+            {
+                opt.Cookie = new CookieBuilder
+                {
+                    Name = "MySessionId",
+                    IsEssential = true
+                };
+                opt.IdleTimeout = new TimeSpan(0, 10, 0);
+            })
+                .AddRazorPages()
                 .AddRazorPagesOptions(opt =>
                 {
                     opt.Conventions.AddPageRoute("/Article/Index", "/Article/Page-{id:int}");
@@ -50,6 +61,7 @@ namespace RazorPage
             app.UseStaticFiles();
 
             app.UseRouting();
+            app.UseSession();
 
             app.UseAuthorization();
 

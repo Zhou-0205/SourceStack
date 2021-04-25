@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using E=RazorPage.Entities;
+using E = RazorPage.Entities;
 using RazorPage.Filter;
 using RazorPage.Repositories;
+using Newtonsoft.Json;
 
 namespace RazorPage.Pages.Register
 {
@@ -25,11 +26,13 @@ namespace RazorPage.Pages.Register
         public string Name { get; set; }
         [MinLength(4, ErrorMessage = "密码不能少于四位")]
         public string Password { get; set; }
-        public bool RememberMe { get; set; }
+        //public bool RememberMe { get; set; }
         public void OnGet()
         {
-            ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
-            ViewData["UserId"] = Request.Cookies[Keys.UserId];
+            //ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            //ViewData["UserId"] = Request.Cookies[Keys.UserId];
+            ViewData["UserId"] = HttpContext.Session.GetString(Keys.UserId);
+            ViewData["UserName"] = HttpContext.Session.GetString(Keys.UserName);
         }
         public IActionResult OnPost()
         {
@@ -51,14 +54,19 @@ namespace RazorPage.Pages.Register
                 return Page();
             }
 
-            CookieOptions cookieOptions = new CookieOptions();
-            if (RememberMe)
-            {
-                cookieOptions.Expires = DateTime.Now.AddDays(14);
-            }//else expires=session
+            //CookieOptions cookieOptions = new CookieOptions();
+            //if (RememberMe)
+            //{
+            //    cookieOptions.Expires = DateTime.Now.AddDays(14);
+            //}//else expires=session
 
-            Response.Cookies.Append(Keys.UserId, user.Id.ToString(), cookieOptions);
-            Response.Cookies.Append(Keys.UserName, user.Name.ToString(), cookieOptions);
+            HttpContext.Session.SetString(Keys.UserId, user.Id.ToString());
+            HttpContext.Session.SetString(Keys.UserName, user.Name.ToString());
+
+            //HttpContext.Session.SetString("User", JsonConvert.SerializeObject(LogOnModel));
+
+            //Response.Cookies.Append(Keys.UserId, user.Id.ToString(), cookieOptions);
+            //Response.Cookies.Append(Keys.UserName, user.Name.ToString(), cookieOptions);
 
             string path = Request.Query["prepage"].ToString();
             if (!string.IsNullOrEmpty(path))

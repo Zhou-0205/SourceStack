@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using E = RazorPage.Entities;
 using RazorPage.Repositories;
+using Microsoft.AspNetCore.Http;
 
 namespace RazorPage.Pages.Article
 {
@@ -26,8 +27,10 @@ namespace RazorPage.Pages.Article
             Articles = singleRepository.Find(id);
             Previous = singleRepository.Find(id - 1);
             Next = singleRepository.Find(id + 1);
-            ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
-            ViewData["UserId"] = Request.Cookies[Keys.UserId];
+            //ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            //ViewData["UserId"] = Request.Cookies[Keys.UserId];
+            ViewData["UserId"] = HttpContext.Session.GetString(Keys.UserId);
+            ViewData["UserName"] = HttpContext.Session.GetString(Keys.UserName);
         }
     }
 }

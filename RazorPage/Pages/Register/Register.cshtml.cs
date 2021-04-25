@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using E=RazorPage.Entities;
 using RazorPage.Repositories;
+using Microsoft.AspNetCore.Http;
 
 namespace RazorPage.Pages.Register
 {
@@ -22,8 +23,10 @@ namespace RazorPage.Pages.Register
 
         public void OnGet()
         {
-            ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
-            ViewData["UserId"] = Request.Cookies[Keys.UserId];
+            //ViewData["HasLogon"] = Request.Cookies[Keys.UserName];
+            //ViewData["UserId"] = Request.Cookies[Keys.UserId];
+            ViewData["UserId"] = HttpContext.Session.GetString(Keys.UserId);
+            ViewData["UserName"] = HttpContext.Session.GetString(Keys.UserName);
         }
         public void OnPost()
         {

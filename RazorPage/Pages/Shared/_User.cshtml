@@ -13,14 +13,14 @@
 
 @if (Model.Level < 3)
 {
-    <a style="color:darkgrey" href="@Model.Id">@Model.Name</a>
+    <a style="color:darkgrey" href="/User/@Model.Id">@Model.Name</a>
 }
 else if (Model.Level <= 8)
 {
-    <a style="color:lightskyblue" href="@Model.Id">@Model.Name</a>
+    <a style="color:lightskyblue" href="/User/@Model.Id">@Model.Name</a>
 }
 else
 {
-    <a style="color:orangered" href="@Model.Id">@Model.Name</a>
+    <a style="color:orangered" href="/User/@Model.Id">@Model.Name</a>
 }
 
