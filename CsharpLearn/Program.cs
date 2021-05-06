@@ -55,7 +55,7 @@ namespace CsharpLearn
             Email email = new Email { Title = "注册", body = "邀请您注册", EmailAddress = "1234567@qq.com" };
             user.Send = email;
             email.Author = user;
-
+            
             context.Add<User>(user);
             context.Add<Email>(email);
             context.SaveChanges();
