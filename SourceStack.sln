@@ -3,12 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SourceStack", "SourceStack\SourceStack.csproj", "{9117B489-453E-4827-A2EA-8416F9D14452}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CsharpLearn", "CsharpLearn\CsharpLearn.csproj", "{F02E6E28-E3B9-4BFE-95F5-35D19E8E15EF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "17BangMVC", "17BangMVC\17BangMVC.csproj", "{6EEB2407-A0F3-4BA2-952D-E8EFECF89B65}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JavaScript", "JavaScript\JavaScript.csproj", "{084A66AD-DDC8-4325-A4D8-E710AB0D141F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewCsharplearn", "NewCsharplearn\NewCsharplearn.csproj", "{D6522D55-D985-4EC7-A7DF-495B47BE55D2}"
@@ -19,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Captcha", "Captcha\Captcha.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RazorPage", "RazorPage\RazorPage.csproj", "{694B7F3C-4D4B-45D1-A201-0C70D68B1A69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EF", "EF\EF.csproj", "{4EC7695A-6BB4-433F-A693-488318340469}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFcore", "EFcore\EFcore.csproj", "{14982CD1-84F1-440A-B1B9-90F2B98437BA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,18 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9117B489-453E-4827-A2EA-8416F9D14452}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9117B489-453E-4827-A2EA-8416F9D14452}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9117B489-453E-4827-A2EA-8416F9D14452}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9117B489-453E-4827-A2EA-8416F9D14452}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F02E6E28-E3B9-4BFE-95F5-35D19E8E15EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F02E6E28-E3B9-4BFE-95F5-35D19E8E15EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F02E6E28-E3B9-4BFE-95F5-35D19E8E15EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F02E6E28-E3B9-4BFE-95F5-35D19E8E15EF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{6EEB2407-A0F3-4BA2-952D-E8EFECF89B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6EEB2407-A0F3-4BA2-952D-E8EFECF89B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{6EEB2407-A0F3-4BA2-952D-E8EFECF89B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{6EEB2407-A0F3-4BA2-952D-E8EFECF89B65}.Release|Any CPU.Build.0 = Release|Any CPU
 		{084A66AD-DDC8-4325-A4D8-E710AB0D141F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{084A66AD-DDC8-4325-A4D8-E710AB0D141F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{084A66AD-DDC8-4325-A4D8-E710AB0D141F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -59,10 +41,10 @@ Global
 		{694B7F3C-4D4B-45D1-A201-0C70D68B1A69}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{694B7F3C-4D4B-45D1-A201-0C70D68B1A69}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{694B7F3C-4D4B-45D1-A201-0C70D68B1A69}.Release|Any CPU.Build.0 = Release|Any CPU
-		{4EC7695A-6BB4-433F-A693-488318340469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{4EC7695A-6BB4-433F-A693-488318340469}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{4EC7695A-6BB4-433F-A693-488318340469}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{4EC7695A-6BB4-433F-A693-488318340469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14982CD1-84F1-440A-B1B9-90F2B98437BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14982CD1-84F1-440A-B1B9-90F2B98437BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14982CD1-84F1-440A-B1B9-90F2B98437BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14982CD1-84F1-440A-B1B9-90F2B98437BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
