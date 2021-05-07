@@ -13,6 +13,7 @@ namespace EFcore
         public string Name { get; set; }
         [Required]
         public string Password { get; set; }
+        public Email Send { get; set; }
         [NotMapped]
         public int FailedTry { get; set; }
     }
